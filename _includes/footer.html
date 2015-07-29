@@ -1,5 +1,8 @@
   <footer class="site-footer">
   
+  <a href="#">Scroll to top</a>
+  <br>
+
     <ul>
 
       {% if site.email %}
@@ -24,7 +27,7 @@
       {% endif %}
     </ul>
 
-    <a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}"> Site RSS </a>
+    Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>
     <br>
 
     {{site.footer}}

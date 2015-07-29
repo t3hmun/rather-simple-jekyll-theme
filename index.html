@@ -18,11 +18,11 @@ layout: default
       {{ post.date | date: "%b %-d, %Y" }} {% for cat in post.categories %} [{{cat}}] {% endfor %}
     </span>
   </div>
-  <div>
+  <div class="index-excerpt">
     <blockquote>{{ post.excerpt | strip_html | truncate: 256 }}</blockquote>
   </div>
 </div>
 {% endfor %}
 
-Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>
+
 

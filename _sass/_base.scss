@@ -154,13 +154,17 @@ pre {
 }
 
 
-/* Special style for index / recent posts. */
-
+/* Style for index / recent posts. 
+ */
 .index {
     text-align: left;
     margin: $standard-margin $standard-side-margin;
 
-        border-bottom: $thin-line solid $very-subtle-colour;
+    /* This is used to give the title and info a single underline. */
+    .index-excerpt {
+        border-top: $thin-line solid $very-subtle-colour;
+        clear: both;
+    }
 
     .index-title {
         font-size: $big-font-size;
