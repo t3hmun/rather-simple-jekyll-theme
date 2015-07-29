@@ -1,134 +1,103 @@
-/**
- * Reset some basic elements
- */
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
+/**** t3hmun's educational base scss file.
+ * 
+ * The job of this file is to define the appearance and feel of basic HTML
+ * elements. The comments are extra verbose for educational purposes.
+ ****/
+
+/* Reset many basic HTML elements. 
+ * This is required for consistency between browsers; some elements such as ul
+ * are implemented with different combinations of margin and padding on each
+ * browser. */
+article, body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure {
     margin: 0;
     padding: 0;
 }
 
+/****
 
+# Margin VS Padding
 
-/**
- * Basic styling
- */
+Margins can overlap (only vertically in block elements) and are external to the element. 
+Paddings do not overlap and are internal to the element. 
+As a result margins only ensure a minimum distance between two elements. 
+So if 2 elements have a 10px and 15px margin respectively, the gap between them would be 15px. 
+If padding was used instead the gap would be 25 px.
+
+****/
+
+/* Basic styling */
 body {
     font-family: $base-font-family;
     font-size: $base-font-size;
     line-height: $base-line-height;
-    font-weight: 300;
-    color: $text-color;
-    background-color: $background-color;
-    -webkit-text-size-adjust: 100%;
+    font-weight: $body-font-weight;
+    color: $text-colour;
+    background-color: $background-colour;
 }
 
-
-
-/**
- * Set `margin-bottom` to maintain vertical rhythm
- */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-ul, ol, dl, figure,
-%vertical-rhythm {
-    margin-bottom: $spacing-unit / 2;
+article {
+    margin-bottom: 25px;
 }
 
+/* Separates the text from the edges the screen and other elements. */
+p {
+    margin: 5px;
+}
 
-
-/**
- * Images
- */
+/* Img
+ * Stops images being wider than the window.
+ * Without this an image could stretch the content area activate a scroll bar.
+ * Accompanying text would flow out of the screen with the image forcing the
+ * user to scroll sideways to read each line. */
 img {
     max-width: 100%;
-    vertical-align: middle;
 }
 
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    margin: 5px;
 
+    /* This `&` syntax a feature of SASS. 
+     * This results in `.post-title` CSS for each of the above header tags. */
+    &.post-title {
+        color: $highlight-colour;
+    }
 
-/**
- * Figures
- */
-figure > img {
-    display: block;
-}
-
-figcaption {
-    font-size: $small-font-size;
-}
-
-
-
-/**
- * Lists
- */
-ul, ol {
-    margin-left: $spacing-unit;
-}
-
-li {
-    > ul,
-    > ol {
-         margin-bottom: 0;
+    &.site-title {
+        font-weight: 700;
+        color: $highlight-colour;
     }
 }
 
-
-
-/**
- * Headings
- */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
-}
-
-
-
-/**
- * Links
- */
+/* Links. Colour them according to the theme. */
 a {
-    color: $brand-color;
+    color: $link-colour;
     text-decoration: none;
 
     &:visited {
-        color: darken($brand-color, 15%);
+        color: darken($link-colour, 15%);
     }
 
     &:hover {
-        color: $text-color;
+        color: $text-colour;
         text-decoration: underline;
     }
-}
 
-
-
-/**
- * Blockquotes
- */
-blockquote {
-    color: $grey-color;
-    border-left: 4px solid $grey-color-light;
-    padding-left: $spacing-unit / 2;
-    font-size: 18px;
-    letter-spacing: -1px;
-    font-style: italic;
-
-    > :last-child {
-        margin-bottom: 0;
+    /* This is for site links in the page header. */
+    &.index {
+        font-size: $big-font-size;
+        font-weight: 400;
+        margin: 10px;
     }
 }
 
-
-
-/**
- * Code formatting
- */
+/* Code formatting
+ * The `code` tag is for inline monospace blocks.
+ * The `pre` is for large blocks which may be colourised. */
 pre,
 code {
-    font-size: 15px;
-    border: 1px solid $grey-color-light;
+    border: 1px solid $grey-colour-light;
     border-radius: 3px;
     background-color: #eef;
 }
@@ -138,9 +107,18 @@ code {
 }
 
 pre {
-    padding: 8px 12px;
+    /* Padding defined using 2 value shorthand.
+     * First value is top and bottom.
+     * Second value is right and left. */
+    padding: 5px 0px;
+
+    /* This gives the code block its own scroll bar.
+     * We don't want the code to fall off or stretch the screen. */
     overflow-x: scroll;
 
+    /* TODO: I'm not sure about this bit, read up on > and why this is here.
+     * The > makes it only apply to code elements that are direct children to
+     * pre elements. */
     > code {
         border: 0;
         padding-right: 0;
@@ -148,49 +126,8 @@ pre {
     }
 }
 
-
-
-/**
- * Wrapper
- */
-.wrapper {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-    @extend %clearfix;
-
-    @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
-    }
-}
-
-
-
-/**
- * Clearfix
- */
-%clearfix {
-
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-}
-
-
-
-/**
- * Icons
- */
+/* The entire purpose of this is to set a standard size for SVG icons. */
 .icon {
-
     > svg {
         display: inline-block;
         width: 16px;
@@ -198,7 +135,7 @@ pre {
         vertical-align: middle;
 
         path {
-            fill: $grey-color;
+            fill: $grey-colour;
         }
     }
 }
