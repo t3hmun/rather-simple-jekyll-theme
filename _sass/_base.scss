@@ -33,15 +33,36 @@ body {
     font-weight: $body-font-weight;
     color: $text-colour;
     background-color: $background-colour;
+    text-align: center;
 }
 
 article {
-    margin-bottom: 25px;
+    /* The centres the article in the screen. */
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: left;
+    max-width: $article-width;
 }
 
-/* Separates the text from the edges the screen and other elements. */
-p {
-    margin: 5px;
+/* P for Paragraph. This should only be used for serious blocks of reading text.
+ * Other quantities of text should use other tags. */
+p, blockquote {
+    /* Justift for glorious newspaper quality reading. */
+    text-align: justify;
+    /* Reading with is meant to be the maximum comfortable text block width. */
+    max-width: $reading-width;
+    margin: $standard-margin $standard-side-margin $endpara-margin;
+    margin-left: auto;
+    margin-right: auto;
+    /* This stops the paragraph appearing next to floating text.
+     * This will avoid awkward wrapping. */
+    clear: both;
+}
+
+blockquote {
+    border-left: $thick-line solid $subtle-colour;
+    padding-left: $standard-side-margin;
 }
 
 /* Img
@@ -55,8 +76,11 @@ img {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 500;
-    margin: 5px;
+    font-weight: $header-weight;
+    /* Three value shorthand, top, sides, bottom */
+    margin: $standard-margin $standard-side-margin $standard-margin;
+
+    border-bottom: 1px solid $subtle-colour;
 
     /* This `&` syntax a feature of SASS. 
      * This results in `.post-title` CSS for each of the above header tags. */
@@ -65,8 +89,9 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     &.site-title {
-        font-weight: 700;
+        font-weight: $site-title-weight;
         color: $highlight-colour;
+        border-bottom: none;
     }
 }
 
@@ -76,7 +101,7 @@ a {
     text-decoration: none;
 
     &:visited {
-        color: darken($link-colour, 15%);
+        color: $visited-colour;
     }
 
     &:hover {
@@ -85,10 +110,10 @@ a {
     }
 
     /* This is for site links in the page header. */
-    &.index {
+    &.top-nav {
         font-size: $big-font-size;
-        font-weight: 400;
-        margin: 10px;
+        font-weight: $header-weight;
+        margin: $standard-margin;
     }
 }
 
@@ -97,26 +122,28 @@ a {
  * The `pre` is for large blocks which may be colourised. */
 pre,
 code {
-    border: 1px solid $grey-colour-light;
-    border-radius: 3px;
-    background-color: #eef;
+    border: 1px solid $subtle-colour;
+    border-radius: $standard-radius;
+    background-color: $code-background;
 }
 
 code {
-    padding: 1px 5px;
+    padding: 0px $standard-margin $standard-side-margin;
+    text-align: left;
 }
 
 pre {
     /* Padding defined using 2 value shorthand.
      * First value is top and bottom.
      * Second value is right and left. */
-    padding: 5px 0px;
+    padding: $standard-margin $standard-side-margin;
+    border-radius: 0;
 
     /* This gives the code block its own scroll bar.
      * We don't want the code to fall off or stretch the screen. */
-    overflow-x: scroll;
+    overflow-x: auto;
 
-    /* TODO: I'm not sure about this bit, read up on > and why this is here.
+    /* The code in the pre elements should not have borders and whatnot.
      * The > makes it only apply to code elements that are direct children to
      * pre elements. */
     > code {
@@ -126,16 +153,24 @@ pre {
     }
 }
 
-/* The entire purpose of this is to set a standard size for SVG icons. */
-.icon {
-    > svg {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
 
-        path {
-            fill: $grey-colour;
-        }
+/* Special style for index / recent posts. */
+
+.index {
+    text-align: left;
+    margin: $standard-margin $standard-side-margin;
+
+        border-bottom: $thin-line solid $very-subtle-colour;
+
+    .index-title {
+        font-size: $big-font-size;
+        float: left;
+    }
+
+    .index-info {
+        background-color: $code-background;
+        padding: 1px $standard-side-margin;
+        float: right;
+        overflow: auto;
     }
 }

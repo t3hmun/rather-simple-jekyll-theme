@@ -1,33 +1,71 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+# This main sass file requires this front-matter section.
 ---
 
 @charset "utf-8";
 
-// Our variables
+/* 
+ * Font & font sizes.
+ */
 $base-font-family: Source Code Pro;
-$base-font-size: 16px;
-$small-font-size: $base-font-size * 0.8;
-$big-font-size: $base-font-size * 1.2;
-$base-line-height: 1.5;
+$base-font-size: 1em;
+$small-font-size: $base-font-size * 0.75;
+$big-font-size: $base-font-size * 1.25;
+
 $body-font-weight: 300;
+$header-weight: 500;
+$site-title-weight: 700;
 
-$spacing-unit: 30px;
 
+/*
+ * All Spacings
+ */
+/* Line spacing. */
+$base-line-height: 1.5em;
+/* Minimum gap between most elements. */
+$standard-margin: 0.3em;
+/* The minimum left and right gutter for most text. 
+ * Only affects small screens / squashed windows. */
+$standard-side-margin: 0.2em;
+/* End of paragraph extra space */
+$endpara-margin: $standard-margin*3;
+
+/*
+ * Reading width is the max for paragraphs of text and is narrow.
+ * Article width is the max for headers, code and other content which can take advantage of wider screens.
+ */
+$reading-width: 30em;
+$article-width: 60em;
+
+/*
+ * Colours
+ */
 $text-colour: #f8f8f2;
 $background-colour: #272822;
 
-
+/* Titles and special elements. */
 $highlight-colour: #fd971f;
 $link-colour: #a6e22e;
+$visited-colour: darken($link-colour, 15%);
+$code-background: darken($background-colour, 4%);
 
+/* Colours for borders and lines. */
+$medium-colour: #fd971f;
+/* Swap strong and medium if you switch to a light scheme. */
+$strong-colour: lighten($medium-colour, 15%);
+$subtle-colour: darken($medium-colour, 30%);
+$very-subtle-colour: darken($medium-colour, 40%);
 
-$grey-colour: #828282;
-$grey-colour-light: lighten($grey-colour, 40%);
-$grey-colour-dark: darken($grey-colour, 25%);
+/*
+ * Misc
+ */
+/* Border edge radius for the code element. */
+$standard-radius: 0.4em;
+$thin-line: 0.1em;
+$medium-line:0.3em;
+$thick-line:0.7em;
 
 /* Import partials from `sass_dir` (defaults to `_sass`) */
-
 @import "base";
 @import "layout";
 @import "syntax-highlighting";

@@ -1,15 +1,14 @@
 /* Site header
  */
 .site-header {
-    border-top: 5px solid $grey-colour-dark;
-    border-bottom: 1px solid $grey-colour-light;
-    min-height: 56px;
+    border-top: $thick-line solid $strong-colour;
+    border-bottom: $thin-line solid $medium-colour;
 }
 
 /* Site footer
  */
 .site-footer {
-    border-top: 1px solid $grey-colour-light;
-    padding: $spacing-unit 0;
+    border-top: 1px solid $medium-colour;
+    border-bottom: $thick-line solid $strong-colour;
     text-align: center;
 }

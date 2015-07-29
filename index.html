@@ -2,19 +2,27 @@
 layout: default
 ---
 
-  <h1 class="page-heading">Posts</h1>
+<p>
+  Welcome to the website for my theme. Click about for a general description of this theme, or click on one of the posts summarised below to read more in detail.
+</p>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+<h1 class="page-heading">Recent Posts</h1>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+{% for post in site.posts limit:5 %}
+<div class="index">
+  <div>
+    <span class="index-title">
+      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }} </a>
+    </span>
+    <span class="index-info">
+      {{ post.date | date: "%b %-d, %Y" }} {% for cat in post.categories %} [{{cat}}] {% endfor %}
+    </span>
+  </div>
+  <div>
+    <blockquote>{{ post.excerpt | strip_html | truncate: 256 }}</blockquote>
+  </div>
+</div>
+{% endfor %}
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>
 
