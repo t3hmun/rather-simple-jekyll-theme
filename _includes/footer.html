@@ -24,8 +24,9 @@
       {% endif %}
     </ul>
 
-    <p><a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}"> Site RSS </a></p>
+    <a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}"> Site RSS </a>
+    <br>
 
-    <p>{{ site.footer}}</p>
+    {{site.footer}}
 
   </footer>

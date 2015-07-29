@@ -50,7 +50,7 @@ $visited-colour: darken($link-colour, 15%);
 $code-background: darken($background-colour, 4%);
 
 /* Colours for borders and lines. */
-$medium-colour: #fd971f;
+$medium-colour: $highlight-colour;
 /* Swap strong and medium if you switch to a light scheme. */
 $strong-colour: lighten($medium-colour, 15%);
 $subtle-colour: darken($medium-colour, 30%);
