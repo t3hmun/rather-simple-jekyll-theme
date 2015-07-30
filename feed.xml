@@ -5,10 +5,10 @@
     <description>A Jekyll theme simple enough to understand and edit, even if you find the
  default Jekyll site complicated. Intended for learning and use.
 </description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 30 Jul 2015 19:57:42 +0100</pubDate>
-    <lastBuildDate>Thu, 30 Jul 2015 19:57:42 +0100</lastBuildDate>
+    <link>http://t3hmun.github.io/rather-simple-jekyll-theme/</link>
+    <atom:link href="http://t3hmun.github.io/rather-simple-jekyll-theme/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 30 Jul 2015 20:07:33 +0100</pubDate>
+    <lastBuildDate>Thu, 30 Jul 2015 20:07:33 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -34,8 +34,8 @@
 &lt;p&gt;wut&lt;/p&gt;
 </description>
         <pubDate>Wed, 29 Jul 2015 16:54:00 +0100</pubDate>
-        <link>http://localhost:4000/jekyll/theme/2015/07/29/Introduction-to-this-Theme.html</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll/theme/2015/07/29/Introduction-to-this-Theme.html</guid>
+        <link>http://t3hmun.github.io/rather-simple-jekyll-theme/jekyll/theme/2015/07/29/Introduction-to-this-Theme.html</link>
+        <guid isPermaLink="true">http://t3hmun.github.io/rather-simple-jekyll-theme/jekyll/theme/2015/07/29/Introduction-to-this-Theme.html</guid>
         
         
         <category>jekyll</category>
@@ -79,8 +79,8 @@
 &lt;p&gt;Now a normal paragraph of text is what this is, well it would be normal if it was not composed of a single rambling sentence that was spewed forth in a single typing frenzy.&lt;/p&gt;
 </description>
         <pubDate>Wed, 29 Jul 2015 16:16:00 +0100</pubDate>
-        <link>http://localhost:4000/jekyll/theme/2015/07/29/Test-Post.html</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll/theme/2015/07/29/Test-Post.html</guid>
+        <link>http://t3hmun.github.io/rather-simple-jekyll-theme/jekyll/theme/2015/07/29/Test-Post.html</link>
+        <guid isPermaLink="true">http://t3hmun.github.io/rather-simple-jekyll-theme/jekyll/theme/2015/07/29/Test-Post.html</guid>
         
         
         <category>jekyll</category>
