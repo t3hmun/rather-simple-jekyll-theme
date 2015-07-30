@@ -1,0 +1,322 @@
+/* 
+ * Font & font sizes.
+ */
+/*
+ * All Spacings
+ */
+/* Line spacing. */
+/* Minimum gap between most elements. */
+/* The minimum left and right gutter for most text. 
+ * Only affects small screens / squashed windows. */
+/* End of paragraph extra space */
+/*
+ * Reading width is the max for paragraphs of text and is narrow.
+ * Article width is the max for headers, code and other content which can take advantage of wider screens.
+ */
+/*
+ * Colours
+ */
+/* Titles and special elements. */
+/* Colours for borders and lines. */
+/* Swap strong and medium if you switch to a light scheme. */
+/*
+ * Misc
+ */
+/* Border edge radius for the code element. */
+/* Import partials from `sass_dir` (defaults to `_sass`) */
+/**** t3hmun's educational base scss file.
+ * 
+ * The job of this file is to define the appearance and feel of basic HTML
+ * elements. The comments are extra verbose for educational purposes.
+ ****/
+/* Reset many basic HTML elements. 
+ * This is required for consistency between browsers; some elements such as ul
+ * are implemented with different combinations of margin and padding on each
+ * browser. */
+article, body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0; }
+
+/****
+
+# Margin VS Padding
+
+Margins can overlap (only vertically in block elements) and are external to the element. 
+Paddings do not overlap and are internal to the element. 
+As a result margins only ensure a minimum distance between two elements. 
+So if 2 elements have a 10px and 15px margin respectively, the gap between them would be 15px. 
+If padding was used instead the gap would be 25 px.
+
+****/
+/* Basic styling */
+body {
+  font-family: "Source Code Pro";
+  font-size: 1em;
+  line-height: 1.5em;
+  font-weight: 300;
+  color: #f8f8f2;
+  background-color: #272822;
+  text-align: center; }
+
+article {
+  /* The centres the article in the screen. */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  max-width: 60em; }
+
+/* P for Paragraph. This should only be used for serious blocks of reading text.
+ * Other quantities of text should use other tags. */
+p, blockquote {
+  /* Justift for glorious newspaper quality reading. */
+  text-align: justify;
+  /* Reading with is meant to be the maximum comfortable text block width. */
+  max-width: 30em;
+  margin: 0.3em 0.2em 0.9em;
+  margin-left: auto;
+  margin-right: auto;
+  /* This stops the paragraph appearing next to floating text.
+   * This will avoid awkward wrapping. */
+  clear: both; }
+
+blockquote {
+  border-left: 0.7em solid #824701;
+  padding-left: 0.2em; }
+
+/* Img
+ * Stops images being wider than the window.
+ * Without this an image could stretch the content area activate a scroll bar.
+ * Accompanying text would flow out of the screen with the image forcing the
+ * user to scroll sideways to read each line. */
+img {
+  max-width: 100%; }
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  /* Three value shorthand, top, sides, bottom */
+  margin: 0.3em 0.2em 0.3em;
+  border-bottom: 1px solid #824701;
+  /* This `&` syntax a feature of SASS. 
+   * This results in `.post-title` CSS for each of the above header tags. */ }
+  h1.post-title, h2.post-title, h3.post-title, h4.post-title, h5.post-title, h6.post-title {
+    color: #fd971f; }
+  h1.site-title, h2.site-title, h3.site-title, h4.site-title, h5.site-title, h6.site-title {
+    font-weight: 700;
+    color: #fd971f;
+    border-bottom: none; }
+
+/* Links. Colour them according to the theme. */
+a {
+  color: #a6e22e;
+  text-decoration: none;
+  /* This is for site links in the page header. */ }
+  a:visited {
+    color: #7aac18; }
+  a:hover {
+    color: #f8f8f2;
+    text-decoration: underline; }
+  a.top-nav {
+    font-size: 1.25em;
+    font-weight: 500;
+    margin: 0.3em; }
+
+/* Code formatting
+ * The `code` tag is for inline monospace blocks.
+ * The `pre` is for large blocks which may be colourised. */
+pre,
+code {
+  border: 1px solid #824701;
+  border-radius: 0.4em;
+  background-color: #1c1d19; }
+
+code {
+  padding: 0px 0.3em 0.2em;
+  text-align: left; }
+
+pre {
+  /* Padding defined using 2 value shorthand.
+   * First value is top and bottom.
+   * Second value is right and left. */
+  padding: 0.3em 0.2em;
+  border-radius: 0;
+  /* This gives the code block its own scroll bar.
+   * We don't want the code to fall off or stretch the screen. */
+  overflow-x: auto;
+  /* The code in the pre elements should not have borders and whatnot.
+   * The > makes it only apply to code elements that are direct children to
+   * pre elements. */ }
+  pre > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0; }
+
+/* Style for index / recent posts. 
+ */
+.index {
+  text-align: left;
+  margin: 0.3em 0.2em;
+  /* This is used to give the title and info a single underline. */ }
+  .index .index-excerpt {
+    border-top: 0.1em solid #4f2b01;
+    clear: both; }
+  .index .index-title {
+    font-size: 1.25em;
+    float: left; }
+  .index .index-info {
+    background-color: #1c1d19;
+    padding: 1px 0.2em;
+    float: right;
+    overflow: auto; }
+
+/* Site header
+ */
+.site-header {
+  border-top: 0.7em solid #feba6b;
+  border-bottom: 0.1em solid #fd971f; }
+
+/* Site footer
+ */
+.site-footer {
+  border-top: 1px solid #fd971f;
+  border-bottom: 0.7em solid #feba6b;
+  text-align: center; }
+
+/**
+ * Syntax highlighting styles
+ */
+.highlight {
+  background: #fff; }
+  .highlight .c {
+    color: #998;
+    font-style: italic; }
+  .highlight .err {
+    color: #a61717;
+    background-color: #e3d2d2; }
+  .highlight .k {
+    font-weight: bold; }
+  .highlight .o {
+    font-weight: bold; }
+  .highlight .cm {
+    color: #998;
+    font-style: italic; }
+  .highlight .cp {
+    color: #999;
+    font-weight: bold; }
+  .highlight .c1 {
+    color: #998;
+    font-style: italic; }
+  .highlight .cs {
+    color: #999;
+    font-weight: bold;
+    font-style: italic; }
+  .highlight .gd {
+    color: #000;
+    background-color: #fdd; }
+  .highlight .gd .x {
+    color: #000;
+    background-color: #faa; }
+  .highlight .ge {
+    font-style: italic; }
+  .highlight .gr {
+    color: #a00; }
+  .highlight .gh {
+    color: #999; }
+  .highlight .gi {
+    color: #000;
+    background-color: #dfd; }
+  .highlight .gi .x {
+    color: #000;
+    background-color: #afa; }
+  .highlight .go {
+    color: #888; }
+  .highlight .gp {
+    color: #555; }
+  .highlight .gs {
+    font-weight: bold; }
+  .highlight .gu {
+    color: #aaa; }
+  .highlight .gt {
+    color: #a00; }
+  .highlight .kc {
+    font-weight: bold; }
+  .highlight .kd {
+    font-weight: bold; }
+  .highlight .kp {
+    font-weight: bold; }
+  .highlight .kr {
+    font-weight: bold; }
+  .highlight .kt {
+    color: #458;
+    font-weight: bold; }
+  .highlight .m {
+    color: #099; }
+  .highlight .s {
+    color: #d14; }
+  .highlight .na {
+    color: #008080; }
+  .highlight .nb {
+    color: #0086B3; }
+  .highlight .nc {
+    color: #458;
+    font-weight: bold; }
+  .highlight .no {
+    color: #008080; }
+  .highlight .ni {
+    color: #800080; }
+  .highlight .ne {
+    color: #900;
+    font-weight: bold; }
+  .highlight .nf {
+    color: #900;
+    font-weight: bold; }
+  .highlight .nn {
+    color: #555; }
+  .highlight .nt {
+    color: #000080; }
+  .highlight .nv {
+    color: #008080; }
+  .highlight .ow {
+    font-weight: bold; }
+  .highlight .w {
+    color: #bbb; }
+  .highlight .mf {
+    color: #099; }
+  .highlight .mh {
+    color: #099; }
+  .highlight .mi {
+    color: #099; }
+  .highlight .mo {
+    color: #099; }
+  .highlight .sb {
+    color: #d14; }
+  .highlight .sc {
+    color: #d14; }
+  .highlight .sd {
+    color: #d14; }
+  .highlight .s2 {
+    color: #d14; }
+  .highlight .se {
+    color: #d14; }
+  .highlight .sh {
+    color: #d14; }
+  .highlight .si {
+    color: #d14; }
+  .highlight .sx {
+    color: #d14; }
+  .highlight .sr {
+    color: #009926; }
+  .highlight .s1 {
+    color: #d14; }
+  .highlight .ss {
+    color: #990073; }
+  .highlight .bp {
+    color: #999; }
+  .highlight .vc {
+    color: #008080; }
+  .highlight .vg {
+    color: #008080; }
+  .highlight .vi {
+    color: #008080; }
+  .highlight .il {
+    color: #099; }
