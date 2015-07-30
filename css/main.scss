@@ -8,6 +8,7 @@
  * Font & font sizes.
  */
 $base-font-family: 'Source Code Pro';
+$syntax-font-family: 'Source Code Pro';
 $base-font-size: 1em;
 $small-font-size: $base-font-size * 0.75;
 $big-font-size: $base-font-size * 1.25;
@@ -68,4 +69,4 @@ $thick-line:0.7em;
 /* Import partials from `sass_dir` (defaults to `_sass`) */
 @import "base";
 @import "layout";
-@import "syntax-highlighting";
+@import "syntax";
