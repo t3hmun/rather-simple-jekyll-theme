@@ -1,22 +1,16 @@
 <header class="site-header">
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700,300' rel='stylesheet' type='text/css'>
-    <div>
-
-        <a href="{{ site.baseurl }}/"><h1 class="site-title">{{ site.title }}</h1></a>
-
-        {% for page in site.pages %}
-        {% if page.title %}
-        <a class="top-nav" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-        {% endif %}
-        {% endfor %}
-        <button type="button" onclick="lightsOn()">Lights On</button>
-        <script type="text/javascript">
-            function lightsOn() {
-                document.body.style.color="#000000";
-                document.body.style.background="#ddddee"
-            }
-        </script>
-
-    </div>
-
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700,300' rel='stylesheet' type='text/css'>
+  <div>
+    <a href="{{ site.baseurl }}/"><h1 class="site-title">{{ site.title }}</h1></a>
+    {% for page in site.pages %}{% if page.title %}
+    <a class="top-nav" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+    {% endif %}{% endfor %}
+    <button type="button" onclick="lightsOn()">Lights On</button>
+    <script type="text/javascript">
+      function lightsOn() {
+        document.body.style.color="#000000";
+        document.body.style.background="#ddddee"
+      }
+    </script>
+  </div>
 </header>

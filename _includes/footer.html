@@ -1,35 +1,10 @@
-  <footer class="site-footer">
-  
+<footer class="site-footer">
   <a href="#">Scroll to top</a>
   <br>
-
-    <ul>
-
-      {% if site.email %}
-      <li>
-      Email:
-        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-      </li>
-      {% endif %}
-
-      {% if site.github_username %}
-      <li>
-        Github:
-        <a href="https://github.com/{{ site.github_username }}">{{ site.github_username }}</a>
-      </li>
-      {% endif %}
-
-      {% if site.twitter_username %}
-      <li>
-        Twitter
-        <a href="https://twitter.com/{{ site.twitter_username }}">{{ site.twitter_username }}</a>
-      </li>
-      {% endif %}
-    </ul>
-
-    Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>
-    <br>
-
-    {{site.footer}}
-
-  </footer>
+  {% if site.email %}Email:  <a href="mailto:{{ site.email }}">{{site.email }}</a>{% endif %}
+  {% if site.github_username %}Github: <a href="https://github.com/{{ site.github_username }}">{{ site.github_username }}</a>{% endif %}
+  {% if site.twitter_username %}Twitter: <a href="https://twitter.com/{{ site.twitter_username }}">{{ site.twitter_username }}</a>{% endif %}
+  Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>
+  <br>
+  {{site.footer}}
+</footer>
