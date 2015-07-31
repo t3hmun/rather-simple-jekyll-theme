@@ -9,7 +9,7 @@
  */
 $base-font-family: 'Source Code Pro';
 $syntax-font-family: 'Source Code Pro';
-$base: 1em; /* All sizes computed from this. */
+$base: 16px; /* All sizes computed from this. */
 $base-font-size: $base;
 $small-font-size: $base-font-size * 0.75;
 $big-font-size: $base-font-size * 1.25;
@@ -43,7 +43,7 @@ $article-width: $reading-width * 1.4;
 /* Bullet points get wider space than standard text blocks. */
 $bullet-width: $article-width;
 $bullet-indent: $bullet-width / 30;
-$bullet-text-gap: 0.5em;
+$bullet-text-gap: $base * 0.5;
 
 
 /*
@@ -78,6 +78,11 @@ $medium-line:$thin-line * 3;
 $thick-line:$thin-line * 7;
 
 /* Import partials from `sass_dir` (defaults to `_sass`) */
+/* Normalize is not for editing. 
+ * There are many quirks and differences between browsers. 
+ * Normalizse is a magic css file for flattening out those differences. 
+ * This gives us a safer consistent base to work from.*/
+@import "normalize";
 @import "base";
 @import "layout";
 @import "syntax";

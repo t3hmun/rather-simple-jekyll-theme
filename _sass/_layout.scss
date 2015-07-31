@@ -8,7 +8,7 @@
 /* Site footer
  */
 .site-footer {
-    border-top: 1px solid $highlight-colour;
+    border-top: $thin-line solid $highlight-colour;
     border-bottom: $thick-line solid $strong-colour;
     text-align: center;
 }

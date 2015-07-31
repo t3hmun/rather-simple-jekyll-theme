@@ -1,21 +1,17 @@
 /**** t3hmun's educational base scss file.
  * 
- * The job of this file is to define the appearance and feel of basic HTML
- * elements. The comments are extra verbose for educational purposes.
- ****/
+ * The job of this file is to define the appearance and feel of basic HTML elements using CSS.
+ * The comments are extra verbose for educational purposes.
+ * One may notice that most sizes and colours are set using variables.
+ * These variables are a feature of SASS.
+ * The values for these variables are all defined in the `main.scss` file.
+ * SASS is an extension of CSS that outputs into CSS.
+ * CSS tends to get ridiculously oversised and complicated these days.
+ * SASS lets us abstract away a lot of this with variables and a bunch of other features i'm yet to learn.
 
-/* Reset many basic HTML elements. 
- * This is required for consistency between browsers; some elements such as ul
- * are implemented with different combinations of margin and padding on each
- * browser. */
-article, body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure {
-    margin: 0;
-    padding: 0;
-}
+__educational interlude__
 
-/****
-
-# Margin VS Padding
+## Margin VS Padding
 
 Margins can overlap (only vertically in block elements) and are external to the element. 
 Paddings do not overlap and are internal to the element. 
@@ -25,7 +21,9 @@ If padding was used instead the gap would be 25 px.
 
 ****/
 
-/* Basic styling */
+/* Everything visible is a child of body. This forms the basic default for everything. 
+ * The header and footer are located inside the body (Header and footer are new HTML5 tags). 
+ * The HTML head (not header) is mainly just meta tags and configuration. */
 body {
     font-family: $base-font-family;
     font-size: $base-font-size;
@@ -33,15 +31,22 @@ body {
     font-weight: $body-font-weight;
     color: $text-colour;
     background-color: $background-colour;
+
+    /* Everythgin lacking its own alignment will be centered (primarily header and footer). */
     text-align: center;
 }
 
+/* This is a new HTML 5 tag. Refers to a block of content that can be understood independantly.
+ * For our purposes it is the main content body of a page; the bit between the header and footer. */
 article {
-    /* The centres the article in the screen. */
+    /* Block elements are centered by setting thier margins to auto. 
+     * Only inline elements respond to text-alignment.*/
     margin-left: auto;
     margin-right: auto;
 
     text-align: left;
+
+    /* Here we configure the maximum width we want to allow content to consume. */
     max-width: $article-width;
 }
 
@@ -108,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {
     /* Three value shorthand, top, sides, bottom */
     margin: $standard-margin $standard-side-margin $standard-margin;
 
-    border-bottom: 1px solid $subtle-colour;
+    border-bottom: $thin-line solid $subtle-colour;
 
     /* This `&` syntax a feature of SASS. 
      * This results in `.post-title` CSS for each of the above header tags. */
@@ -150,14 +155,14 @@ a {
  * The `pre` is for large blocks which may be colourised. */
 pre,
 code {
-    border: 1px solid $subtle-colour;
+    border: $thin-line solid $subtle-colour;
     border-radius: $standard-radius;
     background-color: $code-background;
     font-family: $syntax-font-family;
 }
 
 code {
-    padding: 0px $standard-margin $standard-side-margin;
+    padding: 0 $standard-margin $standard-side-margin;
     text-align: left;
 }
 
@@ -202,7 +207,7 @@ pre {
 
     .index-info {
         background-color: $code-background;
-        padding: 1px $standard-side-margin;
+        padding: $thin-line $standard-side-margin;
         float: right;
         overflow: auto;
     }
