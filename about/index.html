@@ -1,99 +1,73 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <title>About</title>
-  <meta name="description" content="A Jekyll theme simple enough to understand and edit, even if you find the
- default Jekyll site complicated. Intended for learning and use.
-">
-
+  <meta name="description" content="A Jekyll theme simple enough to understand and edit, even if you find the default Jekyll site complicated. Intended for learning and use.">
   <link rel="stylesheet" href="/rather-simple-jekyll-theme/css/main.css">
   <link rel="canonical" href="http://t3hmun.github.io/rather-simple-jekyll-theme/about/">
   <link rel="alternate" type="application/rss+xml" title="t3hmun's rather simple Jekyll theme" href="http://t3hmun.github.io/rather-simple-jekyll-theme/feed.xml" />
 </head>
 
-
 <body>
-
-    <header class="site-header">
-    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700,300' rel='stylesheet' type='text/css'>
-    <div>
-
-        <a href="/rather-simple-jekyll-theme/"><h1 class="site-title">t3hmun's rather simple Jekyll theme</h1></a>
-
-        
-        
-        <a class="top-nav" href="/rather-simple-jekyll-theme/about/">About</a>
-        
-        
-        
-        
-        
-        
-        
-        
-        <button type="button" onclick="lightsOn()">Lights On</button>
-        <script type="text/javascript">
-            function lightsOn() {
-                document.body.style.color="#000000";
-                document.body.style.background="#ddddee"
-            }
-        </script>
-
-    </div>
-
+  <header class="site-header">
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700,300' rel='stylesheet' type='text/css'>
+  <div>
+    <a href="/rather-simple-jekyll-theme/"><h1 class="site-title">t3hmun's rather simple Jekyll theme</h1></a>
+    <a class="top-nav" href="/rather-simple-jekyll-theme/about/">About</a>
+  </div>
 </header>
 
-    <article>
-        <h1 class="post-title">About</h1>
+  <article>
+    <h1 class="post-title">About</h1>
+<p>Welcome to the site for my Jekyll theme. This theme is:</p>
 
-<p>Hello welcome to my super simple basic theme that can be understood by those who have not kept up tp date with web development for the last 10 years. As long as you have a basic comprehension of HTML and programming in genereal, you should be able to understand my theme. </p>
+<ul>
+  <li>Easy to configure:
+    <ul>
+      <li>All colours, sizes and fonts configured from <code class="highlighter-rouge">main.scss</code> via variables.</li>
+      <li>Only 4 base colours to change, easy to flip to light theme.</li>
+      <li>Most sizes are calculated off a single base value.</li>
+      <li>Heavily commented making reasons for each bit of CSS obvious.</li>
+    </ul>
+  </li>
+  <li>Easy to understand:
+    <ul>
+      <li>Familiarity with CSS and SCSS not required, should be intuitive to any programmer.</li>
+      <li>Non-obvious markup has explanations.
+.</li>
+    </ul>
+  </li>
+  <li>Favours function over style.
+    <ul>
+      <li>Supports all window sizes</li>
+      <li>Paragraph text is restricted to a maximum width to maintain readability.</li>
+      <li>Code is given a much wider space.</li>
+      <li>Flows and squashes to small displays without horizontal scroll bars.</li>
+    </ul>
+  </li>
+</ul>
 
-<p>Every single Jekyll theme that I have come across so far has been stuffed full of impossible to decipher Javascript, CSS and other things. Extremely difficult to reverse engineer and modify to my own satisfaction.</p>
+<p>The motivation was the fact that all the themes that I’ve seen so far were far too difficult to decipher and edit predictably.
+I have not kept up with the way websites are made over the last 10 years, I had no idea what SCSS is.</p>
 
-<p>My aim with this theme is to create a truly simple base theme, while embracing the new technologies that make web development easier.</p>
+<p>I attempted to start from scratch using <code class="highlighter-rouge">jekyll new</code> and discovered the default theme was also disturbingly complex.
+I stripped out anything without an obvious or necessary purpose and built this theme.</p>
 
-<p>Jekyll usage documentation at <a href="http://jekyllrb.com/">jekyllrb.com</a></p>
-
-<p>You can find the source code for the Jekyll new theme at: <a href="https://github.com/jglovier/jekyll-new">github.com/jglovier/jekyll-new</a></p>
-
-<p>You can find the source code for Jekyll at <a href="https://github.com/jekyll/jekyll">github.com/jekyll/jekyll</a></p>
+<p>I won’t accept having markup or code I don’t understand, I’m not keen on building my site on poor foundations.</p>
 
 
-    </article>
-      <footer class="site-footer">
-  
+  </article>
+  <footer class="site-footer">
   <a href="#">Scroll to top</a>
   <br>
-
-    <ul>
-
-      
-      <li>
-      Email:
-        <a href="mailto:gh@t3hmun.com">gh@t3hmun.com</a>
-      </li>
-      
-
-      
-      <li>
-        Github:
-        <a href="https://github.com/t3hmun">t3hmun</a>
-      </li>
-      
-
-      
-    </ul>
-
-    Subscribe <a href="/rather-simple-jekyll-theme/feed.xml">via RSS</a>
-    <br>
-
-    Copyright message here or something (page footer message).
-
-  </footer>
-
+  <b>Email:</b> blog at t3hmun dot com
+  <b>Github:</b> <a href="https://github.com/t3hmun">t3hmun</a>
+  
+  Subscribe <a href="/rather-simple-jekyll-theme/feed.xml">via RSS</a>
+  <br>
+  Copyright t3hmun (Manish Parekh)
+</footer>
 
 </body>
-
 </html>

@@ -1,45 +1,419 @@
 /* 
  * Font & font sizes.
  */
+/* All sizes computed from this. */
+/* Bullet points are made of text. */
 /*
  * All Spacings
  */
 /* Line spacing. */
 /* Minimum gap between most elements. */
-/* The minimum left and right gutter for most text. 
+/* The minimum left and right gutter for most text.
  * Only affects small screens / squashed windows. */
 /* End of paragraph extra space */
-/*
- * Reading width is the max for paragraphs of text and is narrow.
- * Article width is the max for headers, code and other content which can take advantage of wider screens.
- */
-/*
- * Colours
- */
-/* Titles and special elements. */
-/* Colours for borders and lines. */
-/* Swap strong and medium if you switch to a light scheme. */
 /*
  * Misc
  */
 /* Border edge radius for the code element. */
-/* Import partials from `sass_dir` (defaults to `_sass`) */
-/**** t3hmun's educational base scss file.
- * 
- * The job of this file is to define the appearance and feel of basic HTML
- * elements. The comments are extra verbose for educational purposes.
- ****/
-/* Reset many basic HTML elements. 
- * This is required for consistency between browsers; some elements such as ul
- * are implemented with different combinations of margin and padding on each
- * browser. */
-article, body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure {
+/*
+ * Reading width is the max for paragraphs of text and is narrow.
+ * Article width is the max for headers, code and other content which can take advantage of wider screens.#
+ * Remember these are MAX values, they may be made smaller according to the screen/window size.
+ */
+/* Bullet points get wider space than standard text blocks. */
+/*
+ * Colours
+ * Only four basic colours, rest are computed.
+ */
+/* foreground, lines and headers. */
+/* This sould be the colour for all clickables. */
+/* Colours for borders and lines. */
+/* May want to change around lighten/darken for light themes. */
+/* Used to compute feature colour. */
+/* Titles and special elements. */
+/* background, bullets and syntax */
+/* 
+ * Import partials from `sass_dir` (defaults to `_sass`) 
+ */
+/* Normalize is not for editing. 
+ * There are many quirks and differences between browsers. 
+ * Normalizse is a magic css file for flattening out those differences. 
+ * This gives us a safer consistent base to work from.*/
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * Improve readability of focused elements when they are also in an
+ * active/hover state.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
   margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
   padding: 0; }
 
-/****
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal; }
 
-# Margin VS Padding
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  box-sizing: content-box;
+  /* 2 */ }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+/* 99% of the text and body formatting is contain here. */
+/**** t3hmun's educational base scss file.
+ * 
+ * The job of this file is to define the appearance and feel of basic HTML elements using CSS.
+ * The comments are extra verbose for educational purposes.
+
+
+__educational interlude__
+
+## SASS extension to CSS
+
+One may notice that most sizes and colours are set using variables.
+These variables are a feature of SASS.
+The values for these variables are all defined in the `main.scss` file.
+SASS is an extension of CSS that outputs into CSS.
+CSS tends to get ridiculously oversized and complicated these days.
+SASS lets us abstract away a lot of this with variables and a bunch of other features.
+
+
+## Margin VS Padding
 
 Margins can overlap (only vertically in block elements) and are external to the element. 
 Paddings do not overlap and are internal to the element. 
@@ -47,58 +421,151 @@ As a result margins only ensure a minimum distance between two elements.
 So if 2 elements have a 10px and 15px margin respectively, the gap between them would be 15px. 
 If padding was used instead the gap would be 25 px.
 
+
+## Inline Elements vs Block Elements
+
+ * Inline elements appear within the normal flow of a sentence. 
+ * They are positioned by text alignment.
+ * Most inline elements are just tags that format text (like <b>).
+ * Their size is generally defined by their content.
+
+ * Block elements are not affected by alignment.
+ * Unless their size is defined they fill all available free space.
+ * Positioned using their margins.
+ * They can be made floating...
+
+CSS can be used to change a block to a inline and vice versa, but this tends to get messy.
+
+__end of intuerlude__ 
+
 ****/
-/* Basic styling */
+/* Everything visible is a child of body. This forms the basic default for everything. 
+ * The header and footer are located inside the body (Header and footer are new HTML5 tags). 
+ * The HTML head (not header) is mainly just meta tags and configuration. */
 body {
   font-family: "Source Code Pro";
-  font-size: 1em;
-  line-height: 1.5em;
+  font-size: 16px;
+  line-height: 24px;
   font-weight: 300;
   color: #f8f8f2;
   background-color: #272822;
+  /* Everything lacking its own alignment will be centred (primarily header and footer). */
   text-align: center; }
 
+/* This is a new HTML 5 tag. Refers to a block of content that can be understood independently.
+ * For our purposes it is the main content body of a page; the bit between the header and footer. */
 article {
-  /* The centres the article in the screen. */
+  /* Block elements are centred by setting their margins to auto. 
+   * Only inline elements respond to text-alignment.*/
   margin-left: auto;
   margin-right: auto;
+  /* The only inline text in this blog are headings and the date. 
+   * The rest of the text are contained in <p> <blockquote> or <pre> tags, 
+   *  which are all blocks with their own internal alignment. */
   text-align: left;
-  max-width: 60em; }
+  /* Here we configure the maximum width we want to allow content to consume. */
+  max-width: 672px; }
 
-/* P for Paragraph. This should only be used for serious blocks of reading text.
+/* P for Paragraph. This should only be used for heavy blocks of reading text.
  * Other quantities of text should use other tags. */
-p, blockquote {
-  /* Justift for glorious newspaper quality reading. */
+p {
+  /* Justify for glorious newspaper quality reading. */
   text-align: justify;
-  /* Reading with is meant to be the maximum comfortable text block width. */
-  max-width: 30em;
-  margin: 0.3em 0.2em 0.9em;
-  margin-left: auto;
-  margin-right: auto;
-  /* This stops the paragraph appearing next to floating text.
-   * This will avoid awkward wrapping. */
+  /* Reading width is meant to be the maximum comfortable text block width. 
+   * The ideal heavy reading width is meant to be rather narrow. 
+   * However pictures and lighter text blocks can exploit more space, 
+   *  hence the bigger size of $article-width. */
+  max-width: 480px;
+  /* Auto side margins to centre the p block in the screen. 
+   * Extra margin at bottom for end of paragraph. */
+  margin: 4.8px auto 14.4px;
+  /* This is required to stop the text from hugging the edge of the screen. A tiny gutter. */
+  padding: 0 3.84px;
+  /* This is important to prevent this block from wrapping / appearing-next-to floating elements. */
   clear: both; }
 
 blockquote {
-  border-left: 0.7em solid #824701;
-  padding-left: 0.2em; }
+  /* The side line to indicate a blockquote. */
+  border-left: 11.2px solid #824701;
+  /* This tiny bit of padding separates the tiers of blockquotes. */
+  padding-left: 3.84px;
+  /* Centre the block. */
+  margin: 0 auto;
+  /* Give the blockquote slightly more space than standard text.  */
+  max-width: 545.04px;
+  /* Avoid troublesome interaction with floating elements. */
+  clear: both;
+  /* A unique background to mark out the area. */
+  background: #1e1406;
+  /* Set some features that may be set differently on some browsers. */
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  quotes: none;
+  /* All the text in a blockquote is also put in p tags. 
+   * This overrides the width of p elements that are direct children of blockquote elements. 
+   * Without this the text would revert to being restrained by the p max-width setting. */ }
+  blockquote > p {
+    max-width: 545.04px; }
+
+/* The list tag, general settings for lists. */
+ul {
+  /* No browser generated bullet points.
+   * Each of the browsers generate bullet shapes differently so I prefer to create them using text (see li:before). */
+  list-style: none;
+  text-align: justify;
+  padding: 0;
+  margin-top: 4.8px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 14.4px;
+  /* Bullet point lists are easier to read when given more horizontal space. */
+  max-width: 672px;
+  /* Since the bullet list is deviating from the standard text width its nice to demark it with a custom background. */
+  background: #1e1406; }
+
+/* Individual list item. */
+li {
+  /* Using percentage makes it squash nicely on small displays. 
+   * I can't explain the relationship between padding-left and text-indent. */
+  padding-left: 3%;
+  padding-right: 4.8px;
+  text-indent: -2%;
+  /* The 1% stops it touch the edge of the block. */
+  /* I just like the look of these lines between top level blocks. */
+  border-bottom: 4.8px solid #272822; }
+  li > ul > li {
+    border-bottom: none; }
+
+/* This inserts the content character to use as a bullet point. */
+li:before {
+  padding-right: 8px;
+  content: "*";
+  color: #feba6b;
+  font-weight: 700; }
+
+/* Define the sub-list bullet point. */
+li li:before {
+  padding-right: 8px;
+  content: "-";
+  color: #feba6b; }
 
 /* Img
  * Stops images being wider than the window.
- * Without this an image could stretch the content area activate a scroll bar.
- * Accompanying text would flow out of the screen with the image forcing the
- * user to scroll sideways to read each line. */
+ * Prevents the image stretching the area or flowing out of it. */
 img {
   max-width: 100%; }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
-  /* Three value shorthand, top, sides, bottom */
-  margin: 0.3em 0.2em 0.3em;
-  border-bottom: 1px solid #824701;
+  margin: 4.8px 3.84px 14.4px;
+  padding-bottom: 4.8px;
+  border-bottom: 1.6px solid #824701;
   /* This `&` syntax a feature of SASS. 
-   * This results in `.post-title` CSS for each of the above header tags. */ }
+   * This results in `.post-title` CSS for each of the above header tags. */
+  /* Make post heading stand out. */
+  /* Make site title stand out. */ }
   h1.post-title, h2.post-title, h3.post-title, h4.post-title, h5.post-title, h6.post-title {
     color: #fd971f; }
   h1.site-title, h2.site-title, h3.site-title, h4.site-title, h5.site-title, h6.site-title {
@@ -110,6 +577,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: #a6e22e;
   text-decoration: none;
+  /* Removes the underline. */
   /* This is for site links in the page header. */ }
   a:visited {
     color: #7aac18; }
@@ -117,28 +585,35 @@ a {
     color: #f8f8f2;
     text-decoration: underline; }
   a.top-nav {
-    font-size: 1.25em;
+    font-size: 20px;
     font-weight: 500;
-    margin: 0.3em; }
+    margin: 4.8px; }
 
-/* Code formatting
+/* Code formatting - fenced code blocks use the pre tag.
  * The `code` tag is for inline monospace blocks.
- * The `pre` is for large blocks which may be colourised. */
+ * The `pre` is for large blocks which may be colourised. 
+ * I have not set a width for the code block.
+ * This causes it to automatically fill the article block that it is contained in. 
+ * Code needs to be given maximum horizontal space. Scrolling or wrapping code is no fun. */
 pre,
 code {
-  border: 1px solid #824701;
-  border-radius: 0.4em;
-  background-color: #1c1d19; }
+  border: 1.6px solid #824701;
+  /* Creates neat curved corners for the border. */
+  border-radius: 6.4px;
+  background-color: #1e1406;
+  /* Set a monospace font.*/
+  font-family: "Source Code Pro"; }
 
+/* This is the tag for small inline `code` bits. */
 code {
-  padding: 0px 0.3em 0.2em;
+  padding: 0 4.8px 3.84px;
   text-align: left; }
 
 pre {
   /* Padding defined using 2 value shorthand.
    * First value is top and bottom.
    * Second value is right and left. */
-  padding: 0.3em 0.2em;
+  padding: 4.8px 3.84px;
   border-radius: 0;
   /* This gives the code block its own scroll bar.
    * We don't want the code to fall off or stretch the screen. */
@@ -151,172 +626,225 @@ pre {
     padding-right: 0;
     padding-left: 0; }
 
-/* Style for index / recent posts. 
+/* Style for index and recent posts. 
  */
 .index {
   text-align: left;
-  margin: 0.3em 0.2em;
+  margin: 4.8px 3.84px;
+  margin-bottom: 14.4px;
   /* This is used to give the title and info a single underline. */ }
   .index .index-excerpt {
-    border-top: 0.1em solid #4f2b01;
+    border-top: 1.6px solid #4f2b01;
     clear: both; }
   .index .index-title {
-    font-size: 1.25em;
+    font-size: 20px;
     float: left; }
   .index .index-info {
-    background-color: #1c1d19;
-    padding: 1px 0.2em;
+    padding: 1.6px 3.84px;
     float: right;
     overflow: auto; }
 
+/* This only defines the lines around the header and footer. */
 /* Site header
  */
 .site-header {
-  border-top: 0.7em solid #feba6b;
-  border-bottom: 0.1em solid #fd971f; }
+  border-top: 11.2px solid #feba6b;
+  border-bottom: 1.6px solid #fd971f;
+  margin-bottom: 14.4px; }
 
 /* Site footer
  */
 .site-footer {
-  border-top: 1px solid #fd971f;
-  border-bottom: 0.7em solid #feba6b;
+  border-top: 1.6px solid #fd971f;
+  border-bottom: 11.2px solid #feba6b;
   text-align: center; }
 
-/**
- * Syntax highlighting styles
- */
+/* This is used to apply a suitable theme to the sytax highlighting performed by Rouge. */
+.highlight table td {
+  padding: 4.8px; }
+
+.highlight table pre {
+  margin: 0; }
+
+.highlight .gh {
+  color: #999999; }
+
+.highlight .sr {
+  color: #f6aa11; }
+
+.highlight .go {
+  color: #888888; }
+
+.highlight .gp {
+  color: #555555; }
+
+.highlight .gu {
+  color: #aaaaaa; }
+
+.highlight .nb {
+  color: #f6aa11; }
+
+.highlight .cm {
+  color: #75715e; }
+
+.highlight .cp {
+  color: #75715e; }
+
+.highlight .c1 {
+  color: #75715e; }
+
+.highlight .cs {
+  color: #75715e; }
+
+.highlight .c, .highlight .cd {
+  color: #75715e; }
+
+.highlight .err {
+  color: #960050; }
+
+.highlight .gr {
+  color: #960050; }
+
+.highlight .gt {
+  color: #960050; }
+
+.highlight .gd {
+  color: #49483e; }
+
+.highlight .gi {
+  color: #49483e; }
+
+.highlight .ge {
+  color: #49483e; }
+
+.highlight .kc {
+  color: #66d9ef; }
+
+.highlight .kd {
+  color: #66d9ef; }
+
+.highlight .kr {
+  color: #66d9ef; }
+
+.highlight .no {
+  color: #66d9ef; }
+
+.highlight .kt {
+  color: #66d9ef; }
+
+.highlight .mf {
+  color: #ae81ff; }
+
+.highlight .mh {
+  color: #ae81ff; }
+
+.highlight .il {
+  color: #ae81ff; }
+
+.highlight .mi {
+  color: #ae81ff; }
+
+.highlight .mo {
+  color: #ae81ff; }
+
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff; }
+
+.highlight .sc {
+  color: #ae81ff; }
+
+.highlight .se {
+  color: #ae81ff; }
+
+.highlight .ss {
+  color: #ae81ff; }
+
+.highlight .sd {
+  color: #e6db74; }
+
+.highlight .s2 {
+  color: #e6db74; }
+
+.highlight .sb {
+  color: #e6db74; }
+
+.highlight .sh {
+  color: #e6db74; }
+
+.highlight .si {
+  color: #e6db74; }
+
+.highlight .sx {
+  color: #e6db74; }
+
+.highlight .s1 {
+  color: #e6db74; }
+
+.highlight .s {
+  color: #e6db74; }
+
+.highlight .na {
+  color: #a6e22e; }
+
+.highlight .nc {
+  color: #a6e22e; }
+
+.highlight .nd {
+  color: #a6e22e; }
+
+.highlight .ne {
+  color: #a6e22e; }
+
+.highlight .nf {
+  color: #a6e22e; }
+
+.highlight .vc {
+  color: #ffffff; }
+
+.highlight .nn {
+  color: #ffffff; }
+
+.highlight .nl {
+  color: #ffffff; }
+
+.highlight .ni {
+  color: #ffffff; }
+
+.highlight .bp {
+  color: #ffffff; }
+
+.highlight .vg {
+  color: #ffffff; }
+
+.highlight .vi {
+  color: #ffffff; }
+
+.highlight .nv {
+  color: #ffffff; }
+
+.highlight .w {
+  color: #ffffff; }
+
 .highlight {
-  background: #fff; }
-  .highlight .c {
-    color: #998;
-    font-style: italic; }
-  .highlight .err {
-    color: #a61717;
-    background-color: #e3d2d2; }
-  .highlight .k {
-    font-weight: bold; }
-  .highlight .o {
-    font-weight: bold; }
-  .highlight .cm {
-    color: #998;
-    font-style: italic; }
-  .highlight .cp {
-    color: #999;
-    font-weight: bold; }
-  .highlight .c1 {
-    color: #998;
-    font-style: italic; }
-  .highlight .cs {
-    color: #999;
-    font-weight: bold;
-    font-style: italic; }
-  .highlight .gd {
-    color: #000;
-    background-color: #fdd; }
-  .highlight .gd .x {
-    color: #000;
-    background-color: #faa; }
-  .highlight .ge {
-    font-style: italic; }
-  .highlight .gr {
-    color: #a00; }
-  .highlight .gh {
-    color: #999; }
-  .highlight .gi {
-    color: #000;
-    background-color: #dfd; }
-  .highlight .gi .x {
-    color: #000;
-    background-color: #afa; }
-  .highlight .go {
-    color: #888; }
-  .highlight .gp {
-    color: #555; }
-  .highlight .gs {
-    font-weight: bold; }
-  .highlight .gu {
-    color: #aaa; }
-  .highlight .gt {
-    color: #a00; }
-  .highlight .kc {
-    font-weight: bold; }
-  .highlight .kd {
-    font-weight: bold; }
-  .highlight .kp {
-    font-weight: bold; }
-  .highlight .kr {
-    font-weight: bold; }
-  .highlight .kt {
-    color: #458;
-    font-weight: bold; }
-  .highlight .m {
-    color: #099; }
-  .highlight .s {
-    color: #d14; }
-  .highlight .na {
-    color: #008080; }
-  .highlight .nb {
-    color: #0086B3; }
-  .highlight .nc {
-    color: #458;
-    font-weight: bold; }
-  .highlight .no {
-    color: #008080; }
-  .highlight .ni {
-    color: #800080; }
-  .highlight .ne {
-    color: #900;
-    font-weight: bold; }
-  .highlight .nf {
-    color: #900;
-    font-weight: bold; }
-  .highlight .nn {
-    color: #555; }
-  .highlight .nt {
-    color: #000080; }
-  .highlight .nv {
-    color: #008080; }
-  .highlight .ow {
-    font-weight: bold; }
-  .highlight .w {
-    color: #bbb; }
-  .highlight .mf {
-    color: #099; }
-  .highlight .mh {
-    color: #099; }
-  .highlight .mi {
-    color: #099; }
-  .highlight .mo {
-    color: #099; }
-  .highlight .sb {
-    color: #d14; }
-  .highlight .sc {
-    color: #d14; }
-  .highlight .sd {
-    color: #d14; }
-  .highlight .s2 {
-    color: #d14; }
-  .highlight .se {
-    color: #d14; }
-  .highlight .sh {
-    color: #d14; }
-  .highlight .si {
-    color: #d14; }
-  .highlight .sx {
-    color: #d14; }
-  .highlight .sr {
-    color: #009926; }
-  .highlight .s1 {
-    color: #d14; }
-  .highlight .ss {
-    color: #990073; }
-  .highlight .bp {
-    color: #999; }
-  .highlight .vc {
-    color: #008080; }
-  .highlight .vg {
-    color: #008080; }
-  .highlight .vi {
-    color: #008080; }
-  .highlight .il {
-    color: #099; }
+  color: #ffffff; }
+
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff; }
+
+.highlight .ow {
+  color: #f92672; }
+
+.highlight .nt {
+  color: #f92672; }
+
+.highlight .k, .highlight .kv {
+  color: #f92672; }
+
+.highlight .kn {
+  color: #f92672; }
+
+.highlight .kp {
+  color: #f92672; }
+
+.highlight .o {
+  color: #f92672; }
