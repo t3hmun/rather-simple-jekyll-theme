@@ -2,14 +2,19 @@
  * 
  * The job of this file is to define the appearance and feel of basic HTML elements using CSS.
  * The comments are extra verbose for educational purposes.
- * One may notice that most sizes and colours are set using variables.
- * These variables are a feature of SASS.
- * The values for these variables are all defined in the `main.scss` file.
- * SASS is an extension of CSS that outputs into CSS.
- * CSS tends to get ridiculously oversised and complicated these days.
- * SASS lets us abstract away a lot of this with variables and a bunch of other features i'm yet to learn.
+
 
 __educational interlude__
+
+## SASS extension to CSS
+
+One may notice that most sizes and colours are set using variables.
+These variables are a feature of SASS.
+The values for these variables are all defined in the `main.scss` file.
+SASS is an extension of CSS that outputs into CSS.
+CSS tends to get ridiculously oversized and complicated these days.
+SASS lets us abstract away a lot of this with variables and a bunch of other features.
+
 
 ## Margin VS Padding
 
@@ -18,6 +23,23 @@ Paddings do not overlap and are internal to the element.
 As a result margins only ensure a minimum distance between two elements. 
 So if 2 elements have a 10px and 15px margin respectively, the gap between them would be 15px. 
 If padding was used instead the gap would be 25 px.
+
+
+## Inline Elements vs Block Elements
+
+ * Inline elements appear within the normal flow of a sentence. 
+ * They are positioned by text alignment.
+ * Most inline elements are just tags that format text (like <b>).
+ * Their size is generally defined by their content.
+
+ * Block elements are not affected by alignment.
+ * Unless their size is defined they fill all available free space.
+ * Positioned using their margins.
+ * They can be made floating...
+
+CSS can be used to change a block to a inline and vice versa, but this tends to get messy.
+
+__end of intuerlude__ 
 
 ****/
 
@@ -32,59 +54,104 @@ body {
     color: $text-colour;
     background-color: $background-colour;
 
-    /* Everythgin lacking its own alignment will be centered (primarily header and footer). */
+    /* Everything lacking its own alignment will be centred (primarily header and footer). */
     text-align: center;
 }
 
-/* This is a new HTML 5 tag. Refers to a block of content that can be understood independantly.
+/* This is a new HTML 5 tag. Refers to a block of content that can be understood independently.
  * For our purposes it is the main content body of a page; the bit between the header and footer. */
 article {
-    /* Block elements are centered by setting thier margins to auto. 
+    /* Block elements are centred by setting their margins to auto. 
      * Only inline elements respond to text-alignment.*/
     margin-left: auto;
     margin-right: auto;
 
+    /* The only inline text in this blog are headings and the date. 
+     * The rest of the text are contained in <p> <blockquote> or <pre> tags, 
+     *  which are all blocks with their own internal alignment. */
     text-align: left;
 
     /* Here we configure the maximum width we want to allow content to consume. */
     max-width: $article-width;
 }
 
-/* P for Paragraph. This should only be used for serious blocks of reading text.
+/* P for Paragraph. This should only be used for heavy blocks of reading text.
  * Other quantities of text should use other tags. */
-p, blockquote {
-    /* Justift for glorious newspaper quality reading. */
+p {
+    /* Justify for glorious newspaper quality reading. */
     text-align: justify;
-    /* Reading with is meant to be the maximum comfortable text block width. */
+    /* Reading width is meant to be the maximum comfortable text block width. 
+     * The ideal heavy reading width is meant to be rather narrow. 
+     * However pictures and lighter text blocks can exploit more space, 
+     *  hence the bigger size of $article-width. */
     max-width: $reading-width;
-    margin: $standard-margin $standard-side-margin $endpara-margin;
-    margin-left: auto;
-    margin-right: auto;
-    /* This stops the paragraph appearing next to floating text.
-     * This will avoid awkward wrapping. */
+    /* Auto side margins to centre the p block in the screen. 
+     * Extra margin at bottom for end of paragraph. */
+    margin: $standard-margin auto $endpara-margin;
+    /* This is required to stop the text from hugging the edge of the screen. A tiny gutter. */
+    padding: 0 $standard-side-margin;
+    
+    /* This is important to prevent this block from wrapping / appearing-next-to floating elements. */
     clear: both;
 }
 
 blockquote {
+    /* The side line to indicate a blockquote. */
     border-left: $thick-line solid $subtle-colour;
+    /* This tiny bit of padding separates the tiers of blockquotes. */
     padding-left: $standard-side-margin;
+    /* Centre the block. */
+    margin: 0 auto;
+    /* Give the blockquote slightly more space than standard text.  */
+    max-width: $blockq-width;
+    /* Avoid troublesome interaction with floating elements. */
+    clear: both;
+    /* A unique background to mark out the area. */
+    background: $blockq-background;
+
+    /* Set some features that may be set differently on some browsers. */
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    quotes:none;
+
+    /* All the text in a blockquote is also put in p tags. 
+     * This overrides the width of p elements that are direct children of blockquote elements. 
+     * Without this the text would revert to being restrained by the p max-width setting. */
+    >p {
+        max-width: $blockq-width;
+    }
 }
 
+/* The list tag, general settings for lists. */
 ul {
+    /* No browser generated bullet points.
+     * Each of the browsers generate bullet shapes differently so I prefer to create them using text (see li:before). */
     list-style: none;
-    padding:0;    
+    text-align: justify;
+    padding:0;
+    margin-top: $standard-margin;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: $endpara-margin;
+
+    /* Bullet point lists are easier to read when given more horizontal space. */
     max-width: $bullet-width;
+
+    /* Since the bullet list is deviating from the standard text width its nice to demark it with a custom background. */
     background: $bullet-background;
 }
 
-li { 
+/* Individual list item. */
+li {
+    /* Using percentage makes it squash nicely on small displays. 
+     * I can't explain the relationship between padding-left and text-indent. */
     padding-left: $bullet-indent; 
-    text-indent: -$bullet-indent;
+    padding-right: $standard-margin; 
+    text-indent: -($bullet-indent - 1%); /* The 1% stops it touch the edge of the block. */
 }
 
+/* This inserts the content character to use as a bullet point. */
 li:before {
     padding-right:$bullet-text-gap;
     content: "*";
@@ -92,6 +159,7 @@ li:before {
     font-weight: $bullet-weight;
 }
 
+/* Define the sub-list bullet point. */
 li li:before {
     padding-right:$bullet-text-gap;
     content: "-";
@@ -100,9 +168,7 @@ li li:before {
 
 /* Img
  * Stops images being wider than the window.
- * Without this an image could stretch the content area activate a scroll bar.
- * Accompanying text would flow out of the screen with the image forcing the
- * user to scroll sideways to read each line. */
+ * Prevents the image stretching the area or flowing out of it. */
 img {
     max-width: 100%;
 }
@@ -110,17 +176,19 @@ img {
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
     font-weight: $header-weight;
-    /* Three value shorthand, top, sides, bottom */
+
     margin: $standard-margin $standard-side-margin $standard-margin;
 
     border-bottom: $thin-line solid $subtle-colour;
 
     /* This `&` syntax a feature of SASS. 
      * This results in `.post-title` CSS for each of the above header tags. */
+    /* Make post heading stand out. */
     &.post-title {
         color: $highlight-colour;
     }
 
+    /* Make site title stand out. */
     &.site-title {
         font-weight: $site-title-weight;
         color: $highlight-colour;
@@ -131,7 +199,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Links. Colour them according to the theme. */
 a {
     color: $link-colour;
-    text-decoration: none;
+    text-decoration: none; /* Removes the underline. */
 
     &:visited {
         color: $visited-colour;
@@ -150,17 +218,24 @@ a {
     }
 }
 
-/* Code formatting
+/* Code formatting - fenced code blocks use the pre tag.
  * The `code` tag is for inline monospace blocks.
- * The `pre` is for large blocks which may be colourised. */
+ * The `pre` is for large blocks which may be colourised. 
+ * I have not set a width for the code block.
+ * This causes it to automatically fill the article block that it is contained in. 
+ * Code needs to be given maximum horizontal space. Scrolling or wrapping code is no fun. */
 pre,
 code {
     border: $thin-line solid $subtle-colour;
+    /* Creates neat curved corners for the border. */
     border-radius: $standard-radius;
     background-color: $code-background;
+
+    /* Set a monospace font.*/
     font-family: $syntax-font-family;
 }
 
+/* This is the tag for small inline `code` bits. */
 code {
     padding: 0 $standard-margin $standard-side-margin;
     text-align: left;
@@ -188,7 +263,7 @@ pre {
 }
 
 
-/* Style for index / recent posts. 
+/* Style for index and recent posts. 
  */
 .index {
     text-align: left;
@@ -206,7 +281,6 @@ pre {
     }
 
     .index-info {
-        background-color: $code-background;
         padding: $thin-line $standard-side-margin;
         float: right;
         overflow: auto;

@@ -29,20 +29,32 @@ $base-line-height: $base * 1.5;
 $standard-margin: $base * 0.3;
 /* The minimum left and right gutter for most text.
  * Only affects small screens / squashed windows. */
-$standard-side-margin: $base * 0.2;
+$standard-side-margin: $standard-margin * 0.8;
 /* End of paragraph extra space */
 $endpara-margin: $standard-margin * 3;
 
 
 /*
+ * Misc
+ */
+/* Border edge radius for the code element. */
+$standard-radius: $base * 0.4;
+$thin-line: $base * 0.1;
+$medium-line:$thin-line * 3;
+$thick-line:$thin-line * 7;
+
+
+/*
  * Reading width is the max for paragraphs of text and is narrow.
- * Article width is the max for headers, code and other content which can take advantage of wider screens.
+ * Article width is the max for headers, code and other content which can take advantage of wider screens.#
+ * Remember these are MAX values, they may be made smaller according to the screen/window size.
  */
 $reading-width: $base * 30;
 $article-width: $reading-width * 1.4;
+$blockq-width: $reading-width + $thick-line + $standard-side-margin + 50;
 /* Bullet points get wider space than standard text blocks. */
 $bullet-width: $article-width;
-$bullet-indent: $bullet-width / 30;
+$bullet-indent: 3%;
 $bullet-text-gap: $base * 0.5;
 
 
@@ -55,34 +67,31 @@ $background-colour: #272822;
 $highlight-colour: #fd971f; /* foreground, lines and headers. */
 $link-colour: #a6e22e; /* This sould be the colour for all clickables. */
 
-/* Titles and special elements. */
-$feature-colour: darken(mix($background-colour, $highlight-colour), 30%); /* background, bullets and syntax */
-$visited-colour: darken($link-colour, 15%);
-$code-background: $feature-colour;
-$bullet-background: $feature-colour;
-
 /* Colours for borders and lines. */
 /* May want to change around lighten/darken for light themes. */
 $strong-colour: lighten($highlight-colour, 15%);
-$subtle-colour: darken($highlight-colour, 30%);
+$subtle-colour: darken($highlight-colour, 30%); /* Used to compute feature colour. */
 $very-subtle-colour: darken($highlight-colour, 40%);
 
+/* Titles and special elements. */
+$feature-colour: darken(mix($background-colour, $subtle-colour), 13%); /* background, bullets and syntax */
+$visited-colour: darken($link-colour, 15%);
+$code-background: $feature-colour;
+$bullet-background: $feature-colour;
+$blockq-background: darken(mix($background-colour, $subtle-colour), 13%);
 
-/*
- * Misc
+
+/* 
+ * Import partials from `sass_dir` (defaults to `_sass`) 
  */
-/* Border edge radius for the code element. */
-$standard-radius: $base * 0.4;
-$thin-line: $base * 0.1;
-$medium-line:$thin-line * 3;
-$thick-line:$thin-line * 7;
-
-/* Import partials from `sass_dir` (defaults to `_sass`) */
 /* Normalize is not for editing. 
  * There are many quirks and differences between browsers. 
  * Normalizse is a magic css file for flattening out those differences. 
  * This gives us a safer consistent base to work from.*/
 @import "normalize";
+/* 99% of the text and body formatting is contain here. */
 @import "base";
+/* This only defines the lines around the header and footer. */
 @import "layout";
+/* This is used to apply a suitable theme to the sytax highlighting performed by Rouge. */
 @import "syntax";
