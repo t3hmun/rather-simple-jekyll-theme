@@ -187,8 +187,8 @@ img {
 h1, h2, h3, h4, h5, h6 {
     font-weight: $header-weight;
 
-    margin: $standard-margin $standard-side-margin $standard-margin;
-
+    margin: $standard-margin $standard-side-margin $endpara-margin;
+    padding-bottom: $standard-margin;
     border-bottom: $thin-line solid $subtle-colour;
 
     /* This `&` syntax a feature of SASS. 
@@ -278,6 +278,7 @@ pre {
 .index {
     text-align: left;
     margin: $standard-margin $standard-side-margin;
+    margin-bottom: $endpara-margin;
 
     /* This is used to give the title and info a single underline. */
     .index-excerpt {
