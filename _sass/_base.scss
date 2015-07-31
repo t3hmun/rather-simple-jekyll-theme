@@ -203,6 +203,7 @@ h1, h2, h3, h4, h5, h6 {
         font-weight: $site-title-weight;
         color: $highlight-colour;
         border-bottom: none;
+        margin-bottom: 0;
     }
 }
 
@@ -219,13 +220,13 @@ a {
         color: $text-colour;
         text-decoration: underline;
     }
+}
 
-    /* This is for site links in the page header. */
-    &.top-nav {
-        font-size: $big-font-size;
-        font-weight: $header-weight;
-        margin: $standard-margin;
-    }
+.top-nav {
+    font-size: $big-font-size;
+    font-weight: $header-weight;
+    margin: $standard-margin;
+    color: $highlight-colour;
 }
 
 /* Code formatting - fenced code blocks use the pre tag.

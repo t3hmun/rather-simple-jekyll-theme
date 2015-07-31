@@ -1,8 +1,6 @@
 ---
 layout: default
 ---
-<header>
-  <h1 class="post-title">{{ page.title }}</h1>
-  {{ page.date | date: "%b %-d, %Y" }}
-</header>
+<h1 class="post-title">{{ page.title }}</h1>
+{{ page.date | date: "%b %-d, %Y" }}
 {{ content }}

@@ -1,0 +1,24 @@
+---
+layout: default
+title: Archive
+permalink: /post-archive/
+---
+<h1 class="post-heading">Archive</h1>
+{% for post in site.posts %}
+<div class="index">
+  <div>
+    <span class="index-title">
+      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }} </a>
+    </span>
+    <span class="index-info">
+      {{ post.date | date: "%b %-d, %Y" }} {% for cat in post.categories %} [{{cat}}] {% endfor %}
+    </span>
+  </div>
+  <div class="index-excerpt">
+    <blockquote>{{ post.excerpt | strip_html | truncate: 256 }}</blockquote>
+  </div>
+</div>
+{% endfor %}
+
+
+
