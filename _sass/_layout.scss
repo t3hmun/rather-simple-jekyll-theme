@@ -2,13 +2,13 @@
  */
 .site-header {
     border-top: $thick-line solid $strong-colour;
-    border-bottom: $thin-line solid $medium-colour;
+    border-bottom: $thin-line solid $highlight-colour;
 }
 
 /* Site footer
  */
 .site-footer {
-    border-top: 1px solid $medium-colour;
+    border-top: 1px solid $highlight-colour;
     border-bottom: $thick-line solid $strong-colour;
     text-align: center;
 }

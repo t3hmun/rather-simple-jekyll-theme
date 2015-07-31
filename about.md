@@ -4,14 +4,22 @@ title: About
 permalink: /about/
 ---
 
-Hello welcome to my super simple basic theme that can be understood by those who have not kept up tp date with web development for the last 10 years. As long as you have a basic comprehension of HTML and programming in genereal, you should be able to understand my theme. 
+Welcome to the site for my Jekyll theme. This theme is:
 
-Every single Jekyll theme that I have come across so far has been stuffed full of impossible to decipher Javascript, CSS and other things. Extremely difficult to reverse engineer and modify to my own satisfaction.
+ * Easy to configure:
+     - All colours, sizes and fonts configured from `main.scss` via variables.
+     - Most sizes are calculated off eachother, so changing one size affects all.
+     - Heavily commented making reasons for each bit of CSS obvious.
+ * Easy to understand:
+     - Familiarity with CSS and SCSS not required, should be intuitive to any programmer.
+     - Non-obvious markup has explanations.
+ * Favours function over style:
+     - Supports all window sizes
+     - Text is restricted to a maximum width to maintain readability.
 
-My aim with this theme is to create a truly simple base theme, while embracing the new technologies that make web development easier.
-
-Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
-
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+The motivation was the fact that all the themes that I've seen so far were far too difficult to decipher and edit predictably.
+I have not kept up with the way waubsites are made over the last 10 years.
+Didnt even know what SCSS is.
+Even the default `jekyll new` site seemed overcomplicated, so I decided to build up from a basic shell of markup that I fully understand.
+I'm trying to comment in a way that allows anyone in a similar position to hit the ground running.
+I wont't accept having markup or code I don't understand, I'm not keen on building my site on poor foundations. 

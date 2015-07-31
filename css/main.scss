@@ -9,62 +9,73 @@
  */
 $base-font-family: 'Source Code Pro';
 $syntax-font-family: 'Source Code Pro';
-$base-font-size: 1em;
+$base: 1em; /* All sizes computed from this. */
+$base-font-size: $base;
 $small-font-size: $base-font-size * 0.75;
 $big-font-size: $base-font-size * 1.25;
 
 $body-font-weight: 300;
 $header-weight: 500;
 $site-title-weight: 700;
+$bullet-weight: 700; /* Bullet points are made of text. */
 
 
 /*
  * All Spacings
  */
 /* Line spacing. */
-$base-line-height: 1.5em;
+$base-line-height: $base * 1.5;
 /* Minimum gap between most elements. */
-$standard-margin: 0.3em;
-/* The minimum left and right gutter for most text. 
+$standard-margin: $base * 0.3;
+/* The minimum left and right gutter for most text.
  * Only affects small screens / squashed windows. */
-$standard-side-margin: 0.2em;
+$standard-side-margin: $base * 0.2;
 /* End of paragraph extra space */
-$endpara-margin: $standard-margin*3;
+$endpara-margin: $standard-margin * 3;
+
 
 /*
  * Reading width is the max for paragraphs of text and is narrow.
  * Article width is the max for headers, code and other content which can take advantage of wider screens.
  */
-$reading-width: 30em;
-$article-width: 60em;
+$reading-width: $base * 30;
+$article-width: $reading-width * 1.4;
+/* Bullet points get wider space than standard text blocks. */
+$bullet-width: $article-width;
+$bullet-indent: $bullet-width / 30;
+$bullet-text-gap: 0.5em;
+
 
 /*
  * Colours
+ * Only four basic colours, rest are computed.
  */
 $text-colour: #f8f8f2;
 $background-colour: #272822;
+$highlight-colour: #fd971f; /* foreground, lines and headers. */
+$link-colour: #a6e22e; /* This sould be the colour for all clickables. */
 
 /* Titles and special elements. */
-$highlight-colour: #fd971f;
-$link-colour: #a6e22e;
+$feature-colour: darken(mix($background-colour, $highlight-colour), 30%); /* background, bullets and syntax */
 $visited-colour: darken($link-colour, 15%);
-$code-background: darken($background-colour, 4%);
+$code-background: $feature-colour;
+$bullet-background: $feature-colour;
 
 /* Colours for borders and lines. */
-$medium-colour: $highlight-colour;
-/* Swap strong and medium if you switch to a light scheme. */
-$strong-colour: lighten($medium-colour, 15%);
-$subtle-colour: darken($medium-colour, 30%);
-$very-subtle-colour: darken($medium-colour, 40%);
+/* May want to change around lighten/darken for light themes. */
+$strong-colour: lighten($highlight-colour, 15%);
+$subtle-colour: darken($highlight-colour, 30%);
+$very-subtle-colour: darken($highlight-colour, 40%);
+
 
 /*
  * Misc
  */
 /* Border edge radius for the code element. */
-$standard-radius: 0.4em;
-$thin-line: 0.1em;
-$medium-line:0.3em;
-$thick-line:0.7em;
+$standard-radius: $base * 0.4;
+$thin-line: $base * 0.1;
+$medium-line:$thin-line * 3;
+$thick-line:$thin-line * 7;
 
 /* Import partials from `sass_dir` (defaults to `_sass`) */
 @import "base";

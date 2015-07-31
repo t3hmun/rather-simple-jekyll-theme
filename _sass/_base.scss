@@ -65,6 +65,34 @@ blockquote {
     padding-left: $standard-side-margin;
 }
 
+ul {
+    list-style: none;
+    padding:0;    
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: $endpara-margin;
+    max-width: $bullet-width;
+    background: $bullet-background;
+}
+
+li { 
+    padding-left: $bullet-indent; 
+    text-indent: -$bullet-indent;
+}
+
+li:before {
+    padding-right:$bullet-text-gap;
+    content: "*";
+    color: $strong-colour;
+    font-weight: $bullet-weight;
+}
+
+li li:before {
+    padding-right:$bullet-text-gap;
+    content: "-";
+    color: $strong-colour;
+}
+
 /* Img
  * Stops images being wider than the window.
  * Without this an image could stretch the content area activate a scroll bar.
