@@ -140,6 +140,7 @@ ul {
 
     /* Since the bullet list is deviating from the standard text width its nice to demark it with a custom background. */
     background: $bullet-background;
+
 }
 
 /* Individual list item. */
@@ -149,6 +150,15 @@ li {
     padding-left: $bullet-indent; 
     padding-right: $standard-margin; 
     text-indent: -($bullet-indent - 1%); /* The 1% stops it touch the edge of the block. */
+
+    /* I just like the look of these lines between top level blocks. */
+    border-bottom: $medium-line solid $background-colour;
+
+    >ul {
+        >li{
+            border-bottom: none;
+        }
+    }
 }
 
 /* This inserts the content character to use as a bullet point. */
