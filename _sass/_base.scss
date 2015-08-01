@@ -244,6 +244,18 @@ code {
 
     /* Set a monospace font.*/
     font-family: $syntax-font-family;
+
+    /* This is for box art :D */
+    &.art { 
+        line-height: 1.3;
+    }
+
+    >a{
+        &:hover {
+            color: $text-colour;
+            text-decoration: none;
+        }
+    }
 }
 
 /* This is the tag for small inline `code` bits. */
