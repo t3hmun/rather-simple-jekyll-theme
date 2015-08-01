@@ -12,12 +12,9 @@ Welcome to the site for my Jekyll theme. This theme is:
      - Most sizes are calculated off a single base value.
      - Heavily commented making reasons for each bit of CSS obvious.
 
-
-
  * Easy to understand:
      - Familiarity with CSS and SCSS not required, should be intuitive to any programmer.
      - Non-obvious markup has explanations.
-.
 
  * Favours function over style.
      - Supports all window sizes
