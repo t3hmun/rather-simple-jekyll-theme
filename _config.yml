@@ -6,7 +6,7 @@ baseurl: "/rather-simple-jekyll-theme" # the subpath of your site, e.g. /blog/
 url: "http://t3hmun.github.io" #"http://yourdomain.com" the base hostname & protocol for your site
 twitter_username: # Leaving this blank for fun.
 github_username:  t3hmun
-footer: Copyright t3hmun (Manish Parekh)
+footer:
 
 # Build settings
 markdown: kramdown

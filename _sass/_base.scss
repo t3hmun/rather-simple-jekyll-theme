@@ -149,7 +149,8 @@ li {
      * I can't explain the relationship between padding-left and text-indent. */
     padding-left: $bullet-indent;
     padding-right: $standard-margin;
-    text-indent: -($bullet-indent - 1%); /* The 1% stops it touch the edge of the block. */
+
+    /* DO NOT add a negative text indent. Child inline block will inherit and lose their formatting. */
 
     /* I just like the look of these lines between top level blocks. */
     border-bottom: $medium-line solid $background-colour;
@@ -264,14 +265,7 @@ a {
  * Code needs to be given maximum horizontal space. Scrolling or wrapping code is no fun. */
 pre,
 code {
-    border: $thin-line solid $very-subtle-colour;
-    /* Creates neat curved corners for the border. */
-    border-radius: $standard-radius;
     background-color: $code-background;
-
-    /* Want the block to be flush with the screen edge but not the text. */
-    padding: 0 $standard-side-margin;
-    margin: $standard-margin 0;
 
     /* Set a monospace font.*/
     font-family: $syntax-font-family;
@@ -299,16 +293,19 @@ code {
     /* Inline so it can be part of a sentence,
      * Block to prevent line-breaks in the middle. */
     display: inline-block;
+    /* Creates neat curved corners. */
+    border-radius: $standard-radius;
     /* No border it is part of the sentence. */
     border: none;
 }
 
 pre {
-    /* Padding defined using 2 value shorthand.
-     * First value is top and bottom.
-     * Second value is right and left. */
-    padding: $standard-margin $standard-side-margin;
-    border-radius: 0;
+    /* Want the block to be flush with the screen edge but not the text. */
+    padding: 0 $standard-side-margin;
+    margin: $standard-margin 0;
+
+    border: $thin-line solid $very-subtle-colour;
+    border-radius: 0; /* Curves look bad when flussh with sceen edge. */
 
     /* This gives the code block its own scroll bar.
      * We don't want the code to fall off or stretch the screen. */

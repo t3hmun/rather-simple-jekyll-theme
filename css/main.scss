@@ -55,10 +55,10 @@ $thick-line:$thin-line * 7;
  * Remember these are MAX values, they may be made smaller according to the screen/window size.
  */
 $reading-width: $base * 30;
-$article-width: $reading-width * 1.8;
+$article-width: $reading-width * 1.8; /* Max with of any article content. */
 $blockq-width: $reading-width + $thick-line + $standard-side-margin + 50;
 /* Bullet points get wider space than standard text blocks. */
-$bullet-width: $article-width;
+$bullet-width: $article-width * 0.9; /* A bit less than max. */
 $bullet-indent: 3%;
 $bullet-text-gap: $base * 0.5;
 
@@ -78,11 +78,12 @@ $subtle-colour: darken($highlight-colour, 30%); /* Used to compute feature colou
 $very-subtle-colour: darken($highlight-colour, 40%);
 
 /* Titles and special elements. */
-$feature-colour: darken(mix($background-colour, $subtle-colour), 13%); /* background, bullets and syntax */
+$feature-colour: darken(mix($background-colour, $subtle-colour, 80%), 10%); /* code */
+$minor-feature-colour: darken($background-colour, 5%);
 $visited-colour: darken($link-colour, 15%);
 $code-background: $feature-colour;
-$bullet-background: $feature-colour;
-$blockq-background: darken(mix($background-colour, $subtle-colour), 13%);
+$bullet-background: $minor-feature-colour;
+$blockq-background: $minor-feature-colour;
 
 /*
  * Import partials from `sass_dir` (defaults to `_sass`)
