@@ -4,7 +4,7 @@
 
 @charset "utf-8";
 
-/* 
+/*
  * Font & font sizes.
  */
 $base-font-family: 'Source Code Pro';
@@ -19,6 +19,12 @@ $header-weight: 500;
 $site-title-weight: 700;
 $bullet-weight: 700; /* Bullet points are made of text. */
 
+$h1-size-coef: 2;
+$h2-size-coef: 1.7;
+$h3-size-coef: 1.4;
+$h4-size-coef: 1.2;
+$h5-size-coef: 1.0;
+$h6-size-coef: 0.9;
 
 /*
  * All Spacings
@@ -32,7 +38,6 @@ $standard-margin: $base * 0.3;
 $standard-side-margin: $standard-margin * 0.8;
 /* End of paragraph extra space */
 $endpara-margin: $standard-margin * 3;
-
 
 /*
  * Misc
@@ -57,7 +62,6 @@ $bullet-width: $article-width;
 $bullet-indent: 3%;
 $bullet-text-gap: $base * 0.5;
 
-
 /*
  * Colours
  * Only four basic colours, rest are computed.
@@ -80,13 +84,12 @@ $code-background: $feature-colour;
 $bullet-background: $feature-colour;
 $blockq-background: darken(mix($background-colour, $subtle-colour), 13%);
 
-
-/* 
- * Import partials from `sass_dir` (defaults to `_sass`) 
+/*
+ * Import partials from `sass_dir` (defaults to `_sass`)
  */
-/* Normalize is not for editing. 
- * There are many quirks and differences between browsers. 
- * Normalizse is a magic css file for flattening out those differences. 
+/* Normalize is not for editing.
+ * There are many quirks and differences between browsers.
+ * Normalizse is a magic css file for flattening out those differences.
  * This gives us a safer consistent base to work from.*/
 @import "normalize";
 /* 99% of the text and body formatting is contain here. */
