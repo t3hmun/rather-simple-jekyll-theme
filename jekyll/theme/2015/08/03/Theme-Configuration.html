@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Theme Configuration</title>
+  <meta id="meta" name="viewport" content="width=device-width; initial-scale=1.0" />
+  <meta name="description" content="Requisites, Versions, installation, configuration...">
+  <link rel="stylesheet" href="/rather-simple-jekyll-theme/css/main.css">
+  <link rel="canonical" href="http://t3hmun.github.io/rather-simple-jekyll-theme/jekyll/theme/2015/08/03/Theme-Configuration.html">
+  <link rel="alternate" type="application/rss+xml" title="t3hmun's rather simple Jekyll theme" href="http://t3hmun.github.io/rather-simple-jekyll-theme/feed.xml" />
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700,300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <header class="site-header">
+  <a href="/rather-simple-jekyll-theme/"><h1 class="site-title">t3hmun's rather simple Jekyll theme</h1></a>
+  <div class="top-nav">
+     <a href="/rather-simple-jekyll-theme/">Home</a> │ <a href="/rather-simple-jekyll-theme/about/">About</a> │ <a href="/rather-simple-jekyll-theme/archive/">Archive</a>
+  </div>
+</header>
+
+  <article>
+    <h1 class="post-title">Theme Configuration</h1>
+Aug 3, 2015
+<h2 id="pre-requisites">Pre-Requisites</h2>
+
+<p>I am not using <code class="highlighter-rouge">gem gh-pages</code>. Keeping things synchronised with GitHub compatible versions just seems like an unnecessary limitation, I’ll always have access to a machine that can build my site. So I just grabbed the latest stable version of Jekyll and Rouge.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gem install jekyll -v 2.5.3
+gem install rouge -v 1.9.1
+</code></pre>
+</div>
+
+<p>If you do not have Ruby refer to these <a href="http://jekyll-windows.juthilo.com/1-ruby-and-devkit/">instructions</a> to set things up on Windows.</p>
+
+<p>These will remain the official versions for this theme until there is a reason to change. If you have other versions install that you do not want to remove, you can either just try it or make a gemfile and use <a href="http://bundler.io/">bundler</a>.</p>
+
+<h2 id="a-note-on-licence">A Note on Licence</h2>
+
+<p>Initially I had set this GPL. The issue with this is I’m not entirely sure how that would actually apply to a theme. So I switched to <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+
+<p>I don’t regard any visible content you create to be a part of the theme, so all you have to share is a repo of your modifications of the theme, not the whole blog/webiste you create. Also attribution from the repository readme is sufficient, you don’t need to attribute from the site itself.</p>
+
+<h2 id="theme-installation">Theme Installation</h2>
+
+<p>If you’re starting a new blog then you can just clone the whole repo and start from there.</p>
+
+<p>If you want to update an existing blog:</p>
+
+<ul>
+  <li>Copy the <code class="highlighter-rouge">css</code> and <code class="highlighter-rouge">_sass</code> folders to get all my styles.
+    <ul>
+      <li>If this is all you want then manually copy the font links from <code class="highlighter-rouge">_includes/head.html</code>.</li>
+    </ul>
+  </li>
+  <li>Copy <code class="highlighter-rouge">_include</code>, <code class="highlighter-rouge">_layouts_</code> and <code class="highlighter-rouge">index.html</code>.
+    <ul>
+      <li><code class="highlighter-rouge">about.md</code> and <code class="highlighter-rouge">archive</code> are optional.</li>
+      <li>You must merge and missing entries from my <code class="highlighter-rouge">_config.yml</code> to your own.</li>
+      <li>The build settings part of the config is usually rather important.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>Change everything in <code class="highlighter-rouge">_config.yml</code> to suit yourself. Please place a link back to my Github in your <code class="highlighter-rouge">readme.md</code>. It is also nice to credit the theme you built on in the footer but it is not necessary.</p>
+
+  </article>
+  <footer class="site-footer">
+  <a href="#">Scroll to top</a>
+  <br>
+  <b>Email:</b> blog at t3hmun dot com
+  <b>Github:</b> <a href="https://github.com/t3hmun">t3hmun</a>
+  
+  Subscribe <a href="/rather-simple-jekyll-theme/feed.xml">via RSS</a>
+  <br>
+  
+  <small><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+  <br/>
+  This is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</small>
+</footer>
+
+</body>
+</html>

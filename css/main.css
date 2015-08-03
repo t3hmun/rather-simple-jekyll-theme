@@ -1,4 +1,4 @@
-/* 
+/*
  * Font & font sizes.
  */
 /* All sizes computed from this. */
@@ -20,7 +20,9 @@
  * Article width is the max for headers, code and other content which can take advantage of wider screens.#
  * Remember these are MAX values, they may be made smaller according to the screen/window size.
  */
+/* Max with of any article content. */
 /* Bullet points get wider space than standard text blocks. */
+/* A bit less than max. */
 /*
  * Colours
  * Only four basic colours, rest are computed.
@@ -31,13 +33,13 @@
 /* May want to change around lighten/darken for light themes. */
 /* Used to compute feature colour. */
 /* Titles and special elements. */
-/* background, bullets and syntax */
-/* 
- * Import partials from `sass_dir` (defaults to `_sass`) 
+/* code */
+/*
+ * Import partials from `sass_dir` (defaults to `_sass`)
  */
-/* Normalize is not for editing. 
- * There are many quirks and differences between browsers. 
- * Normalizse is a magic css file for flattening out those differences. 
+/* Normalize is not for editing.
+ * There are many quirks and differences between browsers.
+ * Normalizse is a magic css file for flattening out those differences.
  * This gives us a safer consistent base to work from.*/
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -396,7 +398,7 @@ th {
 
 /* 99% of the text and body formatting is contain here. */
 /**** t3hmun's educational base scss file.
- * 
+ *
  * The job of this file is to define the appearance and feel of basic HTML elements using CSS.
  * The comments are extra verbose for educational purposes.
 
@@ -415,16 +417,16 @@ SASS lets us abstract away a lot of this with variables and a bunch of other fea
 
 ## Margin VS Padding
 
-Margins can overlap (only vertically in block elements) and are external to the element. 
-Paddings do not overlap and are internal to the element. 
-As a result margins only ensure a minimum distance between two elements. 
-So if 2 elements have a 10px and 15px margin respectively, the gap between them would be 15px. 
+Margins can overlap (only vertically in block elements) and are external to the element.
+Paddings do not overlap and are internal to the element.
+As a result margins only ensure a minimum distance between two elements.
+So if 2 elements have a 10px and 15px margin respectively, the gap between them would be 15px.
 If padding was used instead the gap would be 25 px.
 
 
 ## Inline Elements vs Block Elements
 
- * Inline elements appear within the normal flow of a sentence. 
+ * Inline elements appear within the normal flow of a sentence.
  * They are positioned by text alignment.
  * Most inline elements are just tags that format text (like <b>).
  * Their size is generally defined by their content.
@@ -436,11 +438,11 @@ If padding was used instead the gap would be 25 px.
 
 CSS can be used to change a block to a inline and vice versa, but this tends to get messy.
 
-__end of intuerlude__ 
+__end of intuerlude__
 
 ****/
-/* Everything visible is a child of body. This forms the basic default for everything. 
- * The header and footer are located inside the body (Header and footer are new HTML5 tags). 
+/* Everything visible is a child of body. This forms the basic default for everything.
+ * The header and footer are located inside the body (Header and footer are new HTML5 tags).
  * The HTML head (not header) is mainly just meta tags and configuration. */
 body {
   font-family: "Source Code Pro";
@@ -455,28 +457,28 @@ body {
 /* This is a new HTML 5 tag. Refers to a block of content that can be understood independently.
  * For our purposes it is the main content body of a page; the bit between the header and footer. */
 article {
-  /* Block elements are centred by setting their margins to auto. 
+  /* Block elements are centred by setting their margins to auto.
    * Only inline elements respond to text-alignment.*/
   margin-left: auto;
   margin-right: auto;
-  /* The only inline text in this blog are headings and the date. 
-   * The rest of the text are contained in <p> <blockquote> or <pre> tags, 
+  /* The only inline text in this blog are headings and the date.
+   * The rest of the text are contained in <p> <blockquote> or <pre> tags,
    *  which are all blocks with their own internal alignment. */
   text-align: left;
   /* Here we configure the maximum width we want to allow content to consume. */
-  max-width: 672px; }
+  max-width: 864px; }
 
 /* P for Paragraph. This should only be used for heavy blocks of reading text.
  * Other quantities of text should use other tags. */
 p {
   /* Justify for glorious newspaper quality reading. */
   text-align: justify;
-  /* Reading width is meant to be the maximum comfortable text block width. 
-   * The ideal heavy reading width is meant to be rather narrow. 
-   * However pictures and lighter text blocks can exploit more space, 
+  /* Reading width is meant to be the maximum comfortable text block width.
+   * The ideal heavy reading width is meant to be rather narrow.
+   * However pictures and lighter text blocks can exploit more space,
    *  hence the bigger size of $article-width. */
   max-width: 480px;
-  /* Auto side margins to centre the p block in the screen. 
+  /* Auto side margins to centre the p block in the screen.
    * Extra margin at bottom for end of paragraph. */
   margin: 4.8px auto 14.4px;
   /* This is required to stop the text from hugging the edge of the screen. A tiny gutter. */
@@ -496,14 +498,14 @@ blockquote {
   /* Avoid troublesome interaction with floating elements. */
   clear: both;
   /* A unique background to mark out the area. */
-  background: #1e1406;
+  background: #1a1a16;
   /* Set some features that may be set differently on some browsers. */
   outline: 0;
   font-size: 100%;
   vertical-align: baseline;
   quotes: none;
-  /* All the text in a blockquote is also put in p tags. 
-   * This overrides the width of p elements that are direct children of blockquote elements. 
+  /* All the text in a blockquote is also put in p tags.
+   * This overrides the width of p elements that are direct children of blockquote elements.
    * Without this the text would revert to being restrained by the p max-width setting. */ }
   blockquote > p {
     max-width: 545.04px; }
@@ -520,18 +522,17 @@ ul {
   margin-right: auto;
   margin-bottom: 14.4px;
   /* Bullet point lists are easier to read when given more horizontal space. */
-  max-width: 672px;
+  max-width: 777.6px;
   /* Since the bullet list is deviating from the standard text width its nice to demark it with a custom background. */
-  background: #1e1406; }
+  background: #1a1a16; }
 
 /* Individual list item. */
 li {
-  /* Using percentage makes it squash nicely on small displays. 
+  /* Using percentage makes it squash nicely on small displays.
    * I can't explain the relationship between padding-left and text-indent. */
   padding-left: 3%;
   padding-right: 4.8px;
-  text-indent: -2%;
-  /* The 1% stops it touch the edge of the block. */
+  /* DO NOT add a negative text indent. Child inline block will inherit and lose their formatting. */
   /* I just like the look of these lines between top level blocks. */
   border-bottom: 4.8px solid #272822; }
   li > ul > li {
@@ -560,9 +561,9 @@ img {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   margin: 4.8px 3.84px 14.4px;
-  padding-bottom: 4.8px;
+  padding: 0;
   border-bottom: 1.6px solid #824701;
-  /* This `&` syntax a feature of SASS. 
+  /* This `&` syntax a feature of SASS.
    * This results in `.post-title` CSS for each of the above header tags. */
   /* Make post heading stand out. */
   /* Make site title stand out. */ }
@@ -571,50 +572,94 @@ h1, h2, h3, h4, h5, h6 {
   h1.site-title, h2.site-title, h3.site-title, h4.site-title, h5.site-title, h6.site-title {
     font-weight: 700;
     color: #fd971f;
-    border-bottom: none; }
+    border-bottom: none;
+    margin-bottom: 0; }
+
+/* Sets the size and allows bottom-border to appear behind decenders
+ * I want the bottom bits of lettlers lige g and p to cross the line. */
+h1 {
+  font-size: 32px;
+  line-height: 32px; }
+
+h2 {
+  font-size: 27.2px;
+  line-height: 27.2px; }
+
+h3 {
+  font-size: 22.4px;
+  line-height: 22.4px; }
+
+h4 {
+  font-size: 19.2px;
+  line-height: 19.2px; }
+
+h5 {
+  font-size: 16px;
+  line-height: 16px; }
+
+h6 {
+  font-size: 14.4px;
+  line-height: 14.4px; }
 
 /* Links. Colour them according to the theme. */
 a {
   color: #a6e22e;
   text-decoration: none;
-  /* Removes the underline. */
-  /* This is for site links in the page header. */ }
+  /* Removes the underline. */ }
   a:visited {
     color: #7aac18; }
   a:hover {
     color: #f8f8f2;
     text-decoration: underline; }
-  a.top-nav {
-    font-size: 20px;
-    font-weight: 500;
-    margin: 4.8px; }
+
+.top-nav {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 4.8px;
+  color: #fd971f; }
 
 /* Code formatting - fenced code blocks use the pre tag.
  * The `code` tag is for inline monospace blocks.
- * The `pre` is for large blocks which may be colourised. 
+ * The `pre` is for large blocks which may be colourised.
  * I have not set a width for the code block.
- * This causes it to automatically fill the article block that it is contained in. 
+ * This causes it to automatically fill the article block that it is contained in.
  * Code needs to be given maximum horizontal space. Scrolling or wrapping code is no fun. */
 pre,
 code {
-  border: 1.6px solid #824701;
-  /* Creates neat curved corners for the border. */
-  border-radius: 6.4px;
-  background-color: #1e1406;
+  background-color: #16120b;
   /* Set a monospace font.*/
-  font-family: "Source Code Pro"; }
+  font-family: "Source Code Pro";
+  /* This is for box art :D */ }
+  pre.art,
+  code.art {
+    line-height: 1.3; }
+  pre > a:hover,
+  code > a:hover {
+    color: #f8f8f2;
+    text-decoration: none; }
 
 /* This is the tag for small inline `code` bits. */
 code {
-  padding: 0 4.8px 3.84px;
-  text-align: left; }
+  /* A small amount of padding to void escaping the curved edges */
+  padding: 0 3.84px;
+  /* No margins, don't want to disrupt text/line spacing. */
+  margin: 0;
+  color: #feba6b;
+  /* Inline so it can be part of a sentence,
+   * Block to prevent line-breaks in the middle. */
+  display: inline-block;
+  /* Creates neat curved corners. */
+  border-radius: 6.4px;
+  /* No border it is part of the sentence. */
+  border: none; }
 
 pre {
-  /* Padding defined using 2 value shorthand.
-   * First value is top and bottom.
-   * Second value is right and left. */
-  padding: 4.8px 3.84px;
+  /* Want the block to be flush with the screen edge but not the text. */
+  padding: 0 3.84px;
+  margin: 4.8px 0;
+  border: 1.6px solid #4f2b01;
   border-radius: 0;
+  /* Curves look bad when flussh with sceen edge. */
   /* This gives the code block its own scroll bar.
    * We don't want the code to fall off or stretch the screen. */
   overflow-x: auto;
@@ -626,7 +671,7 @@ pre {
     padding-right: 0;
     padding-left: 0; }
 
-/* Style for index and recent posts. 
+/* Style for index and recent posts.
  */
 .index {
   text-align: left;
@@ -635,13 +680,17 @@ pre {
   /* This is used to give the title and info a single underline. */ }
   .index .index-excerpt {
     border-top: 1.6px solid #4f2b01;
+    /* This prevents it appearing inbetween the title and date. */
     clear: both; }
   .index .index-title {
     font-size: 20px;
+    /* Float so that it appears as a block on the left. */
     float: left; }
   .index .index-info {
     padding: 1.6px 3.84px;
+    /* Float so that it appears as a block on the right. */
     float: right;
+    /* Kicks it to the next line if there is not enough space next to the title. */
     overflow: auto; }
 
 /* This only defines the lines around the header and footer. */

@@ -5,35 +5,59 @@
     <description>A Jekyll theme simple enough to understand and edit, even if you find the default Jekyll site complicated. Intended for learning and use.</description>
     <link>http://t3hmun.github.io/rather-simple-jekyll-theme/</link>
     <atom:link href="http://t3hmun.github.io/rather-simple-jekyll-theme/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 31 Jul 2015 19:30:26 +0100</pubDate>
-    <lastBuildDate>Fri, 31 Jul 2015 19:30:26 +0100</lastBuildDate>
+    <pubDate>Mon, 03 Aug 2015 16:38:40 +0100</pubDate>
+    <lastBuildDate>Mon, 03 Aug 2015 16:38:40 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>Introduction to this Theme</title>
-        <description>&lt;p&gt;This page is a work in progresss.&lt;/p&gt;
+        <title>Theme Configuration</title>
+        <description>&lt;h2 id=&quot;pre-requisites&quot;&gt;Pre-Requisites&lt;/h2&gt;
 
-&lt;h2 id=&quot;motivation&quot;&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;I am not using &lt;code class=&quot;highlighter-rouge&quot;&gt;gem gh-pages&lt;/code&gt;. Keeping things synchronised with GitHub compatible versions just seems like an unnecessary limitation, I’ll always have access to a machine that can build my site. So I just grabbed the latest stable version of Jekyll and Rouge.&lt;/p&gt;
 
-&lt;p&gt;Hello welcome to my super simple basic theme that can be understood by those who have not kept up tp date with web development for the last 10 years. As long as you have a basic comprehension of HTML and programming in genereal, you should be able to understand my theme.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install jekyll -v 2.5.3
+gem install rouge -v 1.9.1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;Every single Jekyll theme that I have come across so far has been stuffed full of impossible to decipher Javascript, CSS and other things. Extremely difficult to reverse engineer and modify to my own satisfaction.&lt;/p&gt;
+&lt;p&gt;If you do not have Ruby refer to these &lt;a href=&quot;http://jekyll-windows.juthilo.com/1-ruby-and-devkit/&quot;&gt;instructions&lt;/a&gt; to set things up on Windows.&lt;/p&gt;
 
-&lt;p&gt;My aim with this theme is to create a truly simple base theme, while embracing the new technologies that make web development easier.&lt;/p&gt;
+&lt;p&gt;These will remain the official versions for this theme until there is a reason to change. If you have other versions install that you do not want to remove, you can either just try it or make a gemfile and use &lt;a href=&quot;http://bundler.io/&quot;&gt;bundler&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;use-of-technologies&quot;&gt;Use of technologies&lt;/h2&gt;
+&lt;h2 id=&quot;a-note-on-licence&quot;&gt;A Note on Licence&lt;/h2&gt;
 
-&lt;p&gt;For a start I’m obviously making use of Jekyll. I’ve decided not to bother using the standard GitHub-Pages configuration of Jekyll. Personally I find it makes much more sense to generate the site locally, since it’ll be tested locally anyway. This way I can use whatever versions and combinations of tooling that I feel like. GitHub pages would just be another potential source of bugs.&lt;/p&gt;
+&lt;p&gt;Initially I had set this GPL. The issue with this is I’m not entirely sure how that would actually apply to a theme. So I switched to &lt;a href=&quot;http://creativecommons.org/licenses/by-sa/4.0/&quot;&gt;CC BY-SA 4.0&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I don’t regard any visible content you create to be a part of the theme, so all you have to share is a repo of your modifications of the theme, not the whole blog/webiste you create. Also attribution from the repository readme is sufficient, you don’t need to attribute from the site itself.&lt;/p&gt;
 
-&lt;h2 id=&quot;useful-links&quot;&gt;Useful Links&lt;/h2&gt;
+&lt;h2 id=&quot;theme-installation&quot;&gt;Theme Installation&lt;/h2&gt;
 
-&lt;p&gt;wut&lt;/p&gt;
+&lt;p&gt;If you’re starting a new blog then you can just clone the whole repo and start from there.&lt;/p&gt;
+
+&lt;p&gt;If you want to update an existing blog:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Copy the &lt;code class=&quot;highlighter-rouge&quot;&gt;css&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;_sass&lt;/code&gt; folders to get all my styles.
+    &lt;ul&gt;
+      &lt;li&gt;If this is all you want then manually copy the font links from &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes/head.html&lt;/code&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Copy &lt;code class=&quot;highlighter-rouge&quot;&gt;_include&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;_layouts_&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt;.
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;about.md&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;archive&lt;/code&gt; are optional.&lt;/li&gt;
+      &lt;li&gt;You must merge and missing entries from my &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; to your own.&lt;/li&gt;
+      &lt;li&gt;The build settings part of the config is usually rather important.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;configuration&quot;&gt;Configuration&lt;/h2&gt;
+
+&lt;p&gt;Change everything in &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; to suit yourself. Please place a link back to my Github in your &lt;code class=&quot;highlighter-rouge&quot;&gt;readme.md&lt;/code&gt;. It is also nice to credit the theme you built on in the footer but it is not necessary.&lt;/p&gt;
 </description>
-        <pubDate>Wed, 29 Jul 2015 16:54:00 +0100</pubDate>
-        <link>http://t3hmun.github.io/rather-simple-jekyll-theme/jekyll/theme/2015/07/29/Introduction-to-this-Theme.html</link>
-        <guid isPermaLink="true">http://t3hmun.github.io/rather-simple-jekyll-theme/jekyll/theme/2015/07/29/Introduction-to-this-Theme.html</guid>
+        <pubDate>Mon, 03 Aug 2015 16:00:00 +0100</pubDate>
+        <link>http://t3hmun.github.io/rather-simple-jekyll-theme/jekyll/theme/2015/08/03/Theme-Configuration.html</link>
+        <guid isPermaLink="true">http://t3hmun.github.io/rather-simple-jekyll-theme/jekyll/theme/2015/08/03/Theme-Configuration.html</guid>
         
         
         <category>jekyll</category>
@@ -46,23 +70,58 @@
         <title>Test Post</title>
         <description>&lt;h1 id=&quot;heading-1&quot;&gt;Heading 1&lt;/h1&gt;
 
+&lt;p&gt;Heading 1 is generally only used for the post title, hence it is not intended for manual use in the post. The title is automatically generated from the yml front matter of the post.&lt;/p&gt;
+
 &lt;h2 id=&quot;heading-2&quot;&gt;Heading 2&lt;/h2&gt;
+
+&lt;p&gt;This is the first level of headings that things would generally be inserted in a post. Here is a link back to the &lt;a href=&quot;/rather-simple-jekyll-theme/&quot;&gt;index page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The basic formatting includes &lt;strong&gt;bold&lt;/strong&gt; and &lt;em&gt;italic&lt;/em&gt; text denoted with underscores in markdown like this (&lt;code class=&quot;highlighter-rouge&quot;&gt;__bold__&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;_italic_&lt;/code&gt;). &lt;strong&gt;Bold&lt;/strong&gt; and &lt;em&gt;italic&lt;/em&gt; can also be denoted using asterisk (&lt;code class=&quot;highlighter-rouge&quot;&gt;**Bold**&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;*italic*&lt;/code&gt;). Inline code blocks are sytled as &lt;code class=&quot;highlighter-rouge&quot;&gt;inline-block&lt;/code&gt;, which prevents unnecessary line-breaks in the code block.&lt;/p&gt;
+
+&lt;p&gt;You may notice that blocks of text like this one are justified and centred in the screen, in a somewhat thin column. This is intended for efficient reading.&lt;/p&gt;
 
 &lt;h3 id=&quot;heading-3&quot;&gt;Heading 3&lt;/h3&gt;
 
+&lt;p&gt;Bullet lists generally benefit from having more space than a standard block of text. I will set out some reasoning for this using bullet points.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The addition of the bullet point to a sentence results in the need for more horizontal space.&lt;/li&gt;
+  &lt;li&gt;Bullet points are intended to separate ideas.
+    &lt;ul&gt;
+      &lt;li&gt;Ideally short sentences on single lines.&lt;/li&gt;
+      &lt;li&gt;Don’t benefit from thin columns like longer text.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I decided to give them a different background to help the eye cope with the change in column width.&lt;/p&gt;
+
 &lt;h4 id=&quot;heading-4&quot;&gt;Heading 4&lt;/h4&gt;
 
-&lt;p&gt;Not a particulary large heading. &lt;code class=&quot;highlighter-rouge&quot;&gt;Heading 1&lt;/code&gt; is not really meant to be used at all. It is used for the post title, which is automatically inserted by Jekyll.&lt;/p&gt;
+&lt;p&gt;This theme is intended for computer people who would find code very important. So here is a neat little C# code block.&lt;/p&gt;
 
-&lt;p&gt;Here is some code:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; This is a random code block to test the functionality.&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//The next line is only 78 characters long, not uncommon in code.
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;VerboselyNamedMethod&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AnotherLongVerboseType&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;thingWithALongName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;thingWithALongName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;someTextProperty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;p&gt;You may have observed that code is also allowed a lot more space than normal text. Code hates narrow screens, absolutely abhors being wrapped. Therefore code is allowed to consume more space and has its own scroll bar when a line is too long for the display.&lt;/p&gt;
+
+&lt;h1 id=&quot;heading-1-1&quot;&gt;Heading 1&lt;/h1&gt;
+
+&lt;h2 id=&quot;heading-2-1&quot;&gt;Heading 2&lt;/h2&gt;
+
+&lt;h3 id=&quot;heading-3-1&quot;&gt;Heading 3&lt;/h3&gt;
+
+&lt;h4 id=&quot;heading-4-1&quot;&gt;Heading 4&lt;/h4&gt;
+
+&lt;h5 id=&quot;heading-5&quot;&gt;Heading 5&lt;/h5&gt;
+
+&lt;h6 id=&quot;heading-6&quot;&gt;Heading 6&lt;/h6&gt;
 
 &lt;p&gt;I’m sure you enjoyed that code. Now have a blockquote:&lt;/p&gt;
 
@@ -70,22 +129,25 @@
   &lt;p&gt;This is a blockquote.&lt;/p&gt;
 
   &lt;blockquote&gt;
-    &lt;p&gt;Embedded blockquote.&lt;/p&gt;
+    &lt;p&gt;Embedded blockquote. A particularly long line inside the blockquote to show the wrapping that happens to long lines of text.&lt;/p&gt;
+
   &lt;/blockquote&gt;
 
   &lt;p&gt;Back to the original blockquote.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Now a normal paragraph of text is what this is, well it would be normal if it was not composed of a single rambling sentence that was spewed forth in a single typing frenzy.&lt;/p&gt;
+&lt;p&gt;Some normal text so that one may observe the spacing between this text and the above blockquote.&lt;/p&gt;
 </description>
         <pubDate>Wed, 29 Jul 2015 16:16:00 +0100</pubDate>
-        <link>http://t3hmun.github.io/rather-simple-jekyll-theme/jekyll/theme/2015/07/29/Test-Post.html</link>
-        <guid isPermaLink="true">http://t3hmun.github.io/rather-simple-jekyll-theme/jekyll/theme/2015/07/29/Test-Post.html</guid>
+        <link>http://t3hmun.github.io/rather-simple-jekyll-theme/jekyll/theme/css/2015/07/29/Test-Post.html</link>
+        <guid isPermaLink="true">http://t3hmun.github.io/rather-simple-jekyll-theme/jekyll/theme/css/2015/07/29/Test-Post.html</guid>
         
         
         <category>jekyll</category>
         
         <category>theme</category>
+        
+        <category>css</category>
         
       </item>
     
