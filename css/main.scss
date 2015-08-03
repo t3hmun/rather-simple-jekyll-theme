@@ -50,7 +50,7 @@ $thick-line:$thin-line * 7;
  * Remember these are MAX values, they may be made smaller according to the screen/window size.
  */
 $reading-width: $base * 30;
-$article-width: $reading-width * 1.4;
+$article-width: $reading-width * 1.8;
 $blockq-width: $reading-width + $thick-line + $standard-side-margin + 50;
 /* Bullet points get wider space than standard text blocks. */
 $bullet-width: $article-width;

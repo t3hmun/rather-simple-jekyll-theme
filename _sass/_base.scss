@@ -237,10 +237,14 @@ a {
  * Code needs to be given maximum horizontal space. Scrolling or wrapping code is no fun. */
 pre,
 code {
-    border: $thin-line solid $subtle-colour;
+    border: $thin-line solid $very-subtle-colour;
     /* Creates neat curved corners for the border. */
     border-radius: $standard-radius;
     background-color: $code-background;
+
+    /* Want the block to be flush with the screen edge but not the text. */
+    padding: 0 $standard-side-margin;
+    margin: $standard-margin 0;
 
     /* Set a monospace font.*/
     font-family: $syntax-font-family;
@@ -260,8 +264,16 @@ code {
 
 /* This is the tag for small inline `code` bits. */
 code {
-    padding: 0 $standard-margin $standard-side-margin;
-    text-align: left;
+    /* A small amount of padding to void escaping the curved edges */
+    padding: 0 $standard-side-margin;
+    /* No margins, don't want to disrupt text/line spacing. */
+    margin: 0;
+    color: $strong-colour;
+    /* Inline so it can be part of a sentence, 
+     * Block to prevent line-breaks in the middle. */
+    display: inline-block;
+    /* No border it is part of the sentence. */
+    border: none;
 }
 
 pre {
@@ -296,17 +308,21 @@ pre {
     /* This is used to give the title and info a single underline. */
     .index-excerpt {
         border-top: $thin-line solid $very-subtle-colour;
+        /* This prevents it appearing inbetween the title and date. */
         clear: both;
     }
 
     .index-title {
         font-size: $big-font-size;
+        /* Float so that it appears as a block on the left. */
         float: left;
     }
 
     .index-info {
         padding: $thin-line $standard-side-margin;
+        /* Float so that it appears as a block on the right. */
         float: right;
+        /* Kicks it to the next line if there is not enough space next to the title. */
         overflow: auto;
     }
 }
